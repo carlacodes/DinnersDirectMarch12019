@@ -33,7 +33,10 @@ mysqli_close($connection);
 
 
 
-
+<?php
+// Free the results from memory
+mysqli_free_result($result);
+mysqli_free_result($result2);?>
 
 
 
@@ -130,9 +133,7 @@ mysqli_close($connection);
 
 
 <!-- /.container -->
-<?php
-// Free the results from memory
-//mysqli_free_result($result);?>
+
 
 <!-- Bootstrap core JavaScript -->
 <script src="../vendor/jquery/jquery.min.js"></script>
