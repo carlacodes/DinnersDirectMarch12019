@@ -21,6 +21,7 @@
 <body>
 
 <!-- Navigation -->
+<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">Dinners Direct</a>
@@ -29,8 +30,10 @@
         </button>
         <div class="index.html" collapse="navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item ">
-                    <a class="nav-link" href="index.html">Home</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About</a>
@@ -44,9 +47,13 @@
                     <a class="nav-link" href="createnewaccount.html">Create Account</a>
                 </li>
 
-                <li class="nav-item active">
-                    <a class="nav-link" href="order.html">Order</a>
-                    <span class="sr-only">(current)</span>
+                <li class="nav-item">
+                    <a class="nav-link" href="order.php">Order</a>
+                    <!--<a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>!-->
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="phpdata/logOut.php">Log Out</a>
                     <!--<a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>!-->
                 </li>
             </ul>

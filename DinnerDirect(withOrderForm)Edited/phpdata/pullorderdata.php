@@ -33,13 +33,6 @@ mysqli_close($connection);
 
 
 
-<?php
-// Free the results from memory
-mysqli_free_result($result);
-mysqli_free_result($result2);?>
-
-
-
 <html>
 <head>
 
@@ -61,36 +54,43 @@ mysqli_free_result($result2);?>
 <body>
 
 <!-- Navigation -->
+<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    < class="container">
-    <a class="navbar-brand" href="../index.html">Dinners Direct</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class=index.html" collapse="navbar-collapse" id="navbarResponsive" >
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="../index.html">Home
-                    <span class="sr-only">(current)</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../about.html">About</a>
-            </li>
+    <div class="container">
+        <a class="navbar-brand" href="../index.html">Dinners Direct</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="index.html" collapse="navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../index.html">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../about.html">About</a>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="../MyAccount.html">MyAccount</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pullorderdata.php">MyAccount</a>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="../createnewaccount.html">Create a New Account</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../order.html">Order</a>
-                <!--<a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>!-->
-            </li>
-        </ul>
-    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="../createnewaccount.html">Create Account</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../order.php">Order</a>
+                    <!--<a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>!-->
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="logOut.php">Log Out</a>
+                    <!--<a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>!-->
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 
@@ -128,6 +128,16 @@ mysqli_free_result($result2);?>
     <div class="row">
 
     </div>
+    <?php
+    // Free the results from memory
+    //unset all variables
+
+    mysqli_free_result($result);
+    mysqli_free_result($result2);
+
+    session_destroy();
+
+    ?>
 
 </div>
 

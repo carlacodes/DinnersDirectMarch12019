@@ -5,7 +5,11 @@
  * Date: 3/1/2019
  * Time: 2:22 PM
  */
-
+$vars = array_keys(get_defined_vars());
+for ($i = 0; $i < sizeOf($vars); $i++) {
+    unset($$vars[$i]);
+}
+unset($vars,$i);
 // Close the connection to log out
 mysqli_close($connection);
 //logging out alert to notify user
