@@ -131,7 +131,7 @@ mysqli_close($connection);
     <?php
     // Free the results from memory
     //unset all variables
-
+//at the start of every page runs that code
     mysqli_free_result($result);
     mysqli_free_result($result2);
 

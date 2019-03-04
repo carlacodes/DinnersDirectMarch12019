@@ -19,6 +19,7 @@ $qryFind .= "WHERE first_name= '" . $firstName . "' AND last_name = '" . $family
 $connection = connectToDb();
 
 //Check if the name exists
+//ADD HTML COMPONENTS TO THIS
 $result = mysqli_query($connection, $qryFind);
 if (mysqli_num_rows($result) > 0) {
     echo "An account already exists.";
