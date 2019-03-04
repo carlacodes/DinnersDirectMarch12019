@@ -24,7 +24,7 @@ $qryFind = "SELECT * FROM customers ";
 $qryFind .= " WHERE password = '" . $passwordSQL ."' AND email = '" . $emailSql . "'";
 
 $connection = connectToDb();
-//do something there to force unset all the data Refer to the PHP manual and use:
+//do something there to force unset all the data, on SLIDE Refer to the PHP manual and use:
 
 //Check if the name exists
 $result = mysqli_query($connection, $qryFind);
