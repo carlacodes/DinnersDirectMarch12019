@@ -12,12 +12,11 @@ $driverIDpullorderdatainstance=$_SESSION['driverID'];//$y is any declared variab
 echo $driverIDpullorderdatainstance;
 
 
-$query = "SELECT driv.first_name, driv.last_name, ordspec.orderitemID, ordspec.DateOrdered, ordspec.amountPaid FROM ordersthis ordspec
+$query = "SELECT driv.first_name, driv.last_name, ord.orderitemID, ord.DateOrdered, ord.amountPaid FROM orders ord
 JOIN drivers driv /*alias of cus for customer*/
     on ord.driverID = driv.driverID
-WHERE ord.driverID = '" . $driverIDpullorderdatainstance."'
 JOIN ordersthis ordspec /*alias of cus for customer*/
-    on ord.orderID = ordspec.orderID
+    on ord.orderID = ordspec.order_ID
 WHERE ord.driverID = '" . $driverIDpullorderdatainstance."'
 ";
 
