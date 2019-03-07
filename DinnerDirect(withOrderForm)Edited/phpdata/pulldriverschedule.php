@@ -9,14 +9,18 @@ session_start();
 //echo "$srch";
 
 $driverIDpullorderdatainstance=$_SESSION['driverID'];//$y is any declared variable
-echo $driverIDpullorderdatainstance;
+//echo $driverIDpullorderdatainstance; //for debugging
 
 
-$query = "SELECT driv.first_name, driv.last_name, ord.orderitemID, ord.DateOrdered, ord.amountPaid FROM orders ord
+$query = "SELECT driv.first_name, driv.last_name, sch.schoolname, ord.orderitemID, ord.DateOrdered, ordspec.time_date, ord.amountPaid FROM orders ord
 JOIN drivers driv /*alias of cus for customer*/
     on ord.driverID = driv.driverID
 JOIN ordersthis ordspec /*alias of cus for customer*/
     on ord.orderID = ordspec.order_ID
+JOIN customers cus /*alias of cus for customer*/
+    on ord.customerID = cus.customerID
+JOIN schools sch /*alias of cus for customer*/
+    on cus.schoolID = sch.schoolID
 WHERE ord.driverID = '" . $driverIDpullorderdatainstance."'
 ";
 
@@ -107,7 +111,7 @@ mysqli_close($connection);
             <th>Name</th>
         </tr>
         <tr>
-            <td><?php print_r($user);
+            <td><?php
             $names=($result2->fetch_assoc()); //instance var to just get the first and last name
                     echo $names['first_name']. " ".$names['last_name'] ?></td>
 
@@ -115,14 +119,16 @@ mysqli_close($connection);
 
 
         <tr>
-            <th>Order item ID</th>
+            <th>School name</th>
             <th>Date ordered</th>
+            <th>Delivery date</th>
             <th>Amount paid</th>
         </tr>
         <?php  while( $user=mysqli_fetch_assoc($result)){ ?>
         <tr>
-            <td><?php print_r($user['orderitemID']) ?> </td>
+            <td><?php print_r($user['schoolname']) ?> </td>
             <td><?php echo $user['DateOrdered'] ?></td>
+            <td><?php echo $user['time_date'] ?></td>
             <td><?php echo $user['amountPaid'] ?></td>
         </tr>
 

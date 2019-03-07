@@ -34,7 +34,7 @@ if (empty($result)){
 if (mysqli_num_rows($result) > 0) {
 
     echo '<script type="text/javascript"> alert("You are logged in!") </script>';
-    echo
+    //echo
     $user = mysqli_fetch_assoc($result);
     //echo "Welcome";
     //echo $user['first_name'];
