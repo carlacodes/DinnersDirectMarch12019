@@ -1,7 +1,7 @@
 <?php
 
 //making this a function
-
+session_destroy();
 require_once('databasephp.php');
 session_start();
 
