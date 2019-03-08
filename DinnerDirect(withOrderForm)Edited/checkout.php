@@ -80,54 +80,72 @@ $db_handle = new DBConnect();
             <br><br>
             <br><br>
 
-                <!-- Shopping Cart -->
-                <div id="shopping-cart">
-                    <div class="txt-heading">View Summary</div>
-                    <?php
-                    if(isset($_SESSION["cart_item"])){
-                        $total_quantity = 0;
-                        $total_price = 0;
-                        ?>
-                        <table class="tbl-cart" cellpadding="10" cellspacing="1">
-                            <tbody>
+            <!-- Shopping Cart -->
+            <div id="shopping-cart">
+                <div class="txt-heading">View Summary</div>
+                <?php
+                if(isset($_SESSION["cart_item"])){
+                    $total_quantity = 0;
+                    $total_price = 0;
+                    ?>
+                    <table class="tbl-cart" cellpadding="10" cellspacing="1">
+                        <tbody>
+                        <tr>
+                            <th style="text-align:left;">Name</th>
+                            <th style="text-align:left;">Code</th>
+                            <th style="text-align:right;" width="5%">Quantity</th>
+                            <th style="text-align:right;" width="10%">Unit Price</th>
+                            <th style="text-align:right;" width="10%">Price</th>
+                        </tr>
+                        <?php
+                        foreach ($_SESSION["cart_item"] as $item){
+                            $item_price = $item["quantity"]*$item["price"];
+                            ?>
                             <tr>
-                                <th style="text-align:left;">Name</th>
-                                <th style="text-align:left;">Code</th>
-                                <th style="text-align:right;" width="5%">Quantity</th>
-                                <th style="text-align:right;" width="10%">Unit Price</th>
-                                <th style="text-align:right;" width="10%">Price</th>
+                                <td><img src="<?php echo $item["image"]; ?>" class="cart-item-image" /><?php echo $item["name"]; ?></td>
+                                <td><?php echo $item["code"]; ?></td>
+                                <td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
+                                <td  style="text-align:right;"><?php echo "$ ".$item["price"]; ?></td>
+                                <td  style="text-align:right;"><?php echo "$ ". number_format($item_price,2); ?></td>
                             </tr>
                             <?php
-                            foreach ($_SESSION["cart_item"] as $item){
-                                $item_price = $item["quantity"]*$item["price"];
-                                ?>
-                                <tr>
-                                    <td><img src="<?php echo $item["image"]; ?>" class="cart-item-image" /><?php echo $item["name"]; ?></td>
-                                    <td><?php echo $item["code"]; ?></td>
-                                    <td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
-                                    <td  style="text-align:right;"><?php echo "$ ".$item["price"]; ?></td>
-                                    <td  style="text-align:right;"><?php echo "$ ". number_format($item_price,2); ?></td>
-                                </tr>
-                                <?php
-                                $total_quantity += $item["quantity"];
-                                $total_price += ($item["price"]*$item["quantity"]);
-                            }
-                            ?>
+                            $total_quantity += $item["quantity"];
+                            $total_price += ($item["price"]*$item["quantity"]);
+                        }
+                        ?>
 
-                            <tr>
-                                <td colspan="2" align="right">Total:</td>
-                                <td align="right"><?php echo $total_quantity; ?></td>
-                                <td align="right" colspan="2"><strong><?php echo "$ ".number_format($total_price, 2); ?></strong></td>
-                                <td></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <?php
-                    }
-                    ?>
+                        <tr>
+                            <td colspan="2" align="right">Total:</td>
+                            <td align="right"><?php echo $total_quantity; ?></td>
+                            <td align="right" colspan="2"><strong><?php echo "$ ".number_format($total_price, 2); ?></strong></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <?php
+                }
+                ?>
+
+                <!--delivery time -->
+                <div>
+                    <form method="post" action=payment.php >
+                        <label for="dt"> Choose Delivery Date and Time: </label>
+                        <input name="dt" type="datetime-local" required/>
+                        <button type="submit" href="payment.php" class="btnCheckout" style=" background-color: #ffffff;
+                                border: #21d000 1px solid;
+                                padding: 5px 10px;
+                                color: #21d000;
+                                float: right;
+                                text-decoration: none;
+                                border-radius: 3px;
+                                margin: 10px 0px;">Make Payment</button>
+                    </form>
 
                 </div>
-                <!-- /.Shopping Cart -->
+                <!--delivery time -->
+
+            </div>
+            <!-- /.Shopping Cart -->
 
         </div>
         <!-- /.col-lg-9 -->

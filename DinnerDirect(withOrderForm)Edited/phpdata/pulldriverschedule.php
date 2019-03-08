@@ -104,7 +104,7 @@ mysqli_close($connection);
 
 <!-- Page Content -->
 <div class="container">
-    <h1> Past Orders</h1>
+    <h1> Driver information</h1>
 
     <table class="table" >
         <tr>

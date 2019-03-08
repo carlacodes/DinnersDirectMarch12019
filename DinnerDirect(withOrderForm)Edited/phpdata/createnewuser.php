@@ -53,10 +53,10 @@ if (mysqli_num_rows($result) > 0) {
     <title>Welcome to DinnersDirect </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link href="../css/shop-homepage.css" rel="stylesheet">
 
 </head>
 
