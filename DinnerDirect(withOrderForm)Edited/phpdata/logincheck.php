@@ -39,6 +39,7 @@ if (mysqli_num_rows($result) > 0) {
     //echo $user['first_name'];
     //echo $user['last_name'];
     $userID=$user['customerID'];
+    echo '<script type="text/javascript"> alert("<?php echo $userID; ?>") </script>';
     $_SESSION['userID']=$userID;
     //echo $userID; //test to make sure customer id in sql database corresponds
     //header('Location: http://localhost/DinnersDirecHuiEn/startbootstrap-shop-homepage-gh-pages/index.html');
@@ -118,6 +119,9 @@ if (mysqli_num_rows($result) > 0) {
 
 
 <!-- Page Content -->
+
+<?php echo $_SESSION['userID']; ?>
+
 <div class="container">
     <h1> login to your account </h1>
     <form method="post" action="phpdata/logincheck.php">
@@ -135,7 +139,7 @@ if (mysqli_num_rows($result) > 0) {
 
             <h1 class="my-4">DinnersDirect</h1>
             <div class="list-group">
-                <a href="menu.php" class="list-group-item">Menu</a>
+                <a href="../menu.php" class="list-group-item">Menu</a>
 
             </div>
 

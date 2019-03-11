@@ -9,6 +9,7 @@ if($_SERVER['REQUEST_METHOD']=$_POST){
     $delivery = $_POST['dt'];
 }
 
+
 if(isset($_SESSION["cart_item"])){
 
     foreach ($_SESSION["cart_item"] as $item => $value ){
@@ -21,8 +22,10 @@ if(isset($_SESSION["cart_item"])){
 
         $item_date = $delivery;
 
-        $query = "INSERT INTO ordersthis (item_id, quantity, price, time_date) " .
-            "VALUES ('$item_id', '$item_quantity', '$item_price', '$item_date')";
+        $customerID=$_SESSION['userID'];
+
+        $query = "INSERT INTO ordersthis (item_id, quantity, price, time_date, customerID) " .
+            "VALUES ('$item_id', '$item_quantity', '$item_price', '$item_date', '$customerID')";
         mysqli_query($conn, $query);
 
         //$value is the array that has the information

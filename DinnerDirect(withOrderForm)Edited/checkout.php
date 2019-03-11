@@ -1,7 +1,15 @@
 <?php
 session_start();
-require_once("dbConnect.php");
-$db_handle = new DBConnect();
+require_once("phpdata/databasephp.php");
+//$db_handle = new DBConnect();
+//$userIDpullorderdatainstance=$_SESSION['userID'];
+echo $_SESSION['userID'];
+if (empty($_SESSION['userID'])){
+    echo '<script type="text/javascript"> alert("Please Log In Before Placing an Order");
+    location="index.html";
+</script>';
+}
+
 ?>
 <html>
 <head>

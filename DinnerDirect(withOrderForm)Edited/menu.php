@@ -79,8 +79,9 @@ if(!empty($_GET["action"])) {
         </button>
         <div class="index.html" collapse="navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="index.html">Home
+                        <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -95,15 +96,24 @@ if(!empty($_GET["action"])) {
                     <a class="nav-link" href="createnewaccount.html">Create Account</a>
                 </li>
 
-                <li class="nav-item active">
+                <li class="nav-item">
+                    <a class="nav-link" href="driverlogin.html">Driver Login</a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link" href="order.php">Order</a>
-                    <span class="sr-only">(current)</span>
+                    <!--<a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>!-->
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="phpdata/logOut.php">Log Out</a>
                     <!--<a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>!-->
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
 <!-- /.Navigation -->
 
 
@@ -259,7 +269,7 @@ if(!empty($_GET["action"])) {
 <!-- Footer -->
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+        <p class="m-0 text-center text-white">Copyright &copy; DinnersDirect 2019</p>
     </div>
     <!-- /.container -->
 </footer>

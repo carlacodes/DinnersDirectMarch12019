@@ -9,7 +9,7 @@ session_start();
 //echo "$srch";
 
 $userIDpullorderdatainstance=$_SESSION['userID'];//$y is any declared variable
-echo $userIDpullorderdatainstance;
+//echo $userIDpullorderdatainstance;
 
 
 $query = "SELECT cus.first_name, cus.last_name, ord.orderitemID, ord.DateOrdered, ord.amountPaid FROM orders ord
