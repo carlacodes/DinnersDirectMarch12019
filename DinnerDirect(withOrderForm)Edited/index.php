@@ -68,13 +68,14 @@
 <div class="container">
 
     <?php
-    if($_SESSION['logged']==true)
+
+    if($_SESSION['logged']==1)
     {
         echo $_SESSION['userFirstName'];
     }
-    else
+    elseif ($_SESSION['logged']!=1)
     { ?>
-    <h1> login to your account </h1>
+        <?= '<h1> login to your account </h1>
     <form method="post" action="phpdata/logincheck.php">
         Your Email:<br>
         <input type="email" name="email" required><br>
@@ -82,7 +83,7 @@
         <input type="password" name="password" required><br>
         <br><br>
         <input type="submit" class="btn btn-primary" value="Submit" required>
-    </form>
+    </form>' ?>
     <?php } ?>
 
 

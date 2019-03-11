@@ -33,4 +33,6 @@ if(isset($_SESSION["cart_item"])){
         //array_walk_recursive($value,"myfunction"); //this one helps us visualise the array to debug
 
     }
+    echo '<script type="text/javascript"> alert("Payment successful!");  location="phpdata/pullorderdata.php";</script>';
+
 }

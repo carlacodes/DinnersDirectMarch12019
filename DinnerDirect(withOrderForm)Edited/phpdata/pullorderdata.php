@@ -17,11 +17,15 @@ JOIN customers cus /*alias of cus for customer*/
     on ordspec.customerID = cus.customerID
 WHERE ordspec.customerID = '" . $userIDpullorderdatainstance."'";
 
+$query3 = "SELECT first_name, last_name FROM customers
+WHERE customers.customerID = '" . $userIDpullorderdatainstance."'";
+
 
 //search database
 //check if the variable has not been initalized
 $result = mysqli_query($connection, $query);
 $result2 = mysqli_query($connection, $query);
+$result3 = mysqli_query($connection, $query3);
 
 if (empty($result)){
     exit("databasePhp query failed, the result does not exist.");
@@ -108,10 +112,10 @@ mysqli_close($connection);
             <th>Name</th>
         </tr>
         <tr>
-            <td><?php print_r($user);
+            <td><?php print_r($user2);
             $names=($result2->fetch_assoc()); //instance var to just get the first and last name
-                    echo $names['first_name']. " ".$names['last_name'] ?></td>
-
+                $names3=($result3->fetch_assoc());
+                    echo $names3['first_name']. " ".$names3['last_name'] ?></td>
         </tr>
 
 

@@ -1,7 +1,7 @@
 <?php
 
 //making this a function
-session_destroy();
+//session_destroy();
 require_once('databasephp.php');
 session_start();
 
@@ -15,7 +15,7 @@ ALTER COLUMN create_date SET DEFAULT CURRENT_TIMESTAMP*/
 
 //$firstName = $_POST['first_name'] ?? '1'; //dataphp 7.0
 //$familyName = $_POST['last_name'] ?? '1';
-$_SESSION['logged'] = true;
+$_SESSION['logged'] = 1;
 $emailSql=$_POST['email']; //want to retrieve email
 $passwordSQL=$_POST['password'];
 /*$qryAdd = "INSERT INTO customer (first_name, last_name, email) VALUES (";
@@ -34,14 +34,15 @@ if (empty($result)){
 }
 if (mysqli_num_rows($result) > 0) {
 
-    echo '<script type="text/javascript"> alert("You are logged in!"); location="../index.php";</script>';
+    echo '<script type="text/javascript"> alert("You are logged in!"); location="../index.html";</script>';
     $user = mysqli_fetch_assoc($result);
+    $_SESSION['logged'] = 1;
     //echo "Welcome";
     //echo $user['first_name'];
     //echo $user['last_name'];
     $userID=$user['customerID'];
     $_SESSION['userFirstName'] =$user['first_name'];
-    echo '<script type="text/javascript"> alert("<?php echo $userID; ?>"); location="../index.php"; </script>';
+    echo '<script type="text/javascript"> alert("<?php echo $userID; ?>"); location="../index.html"; </script>';
     $_SESSION['userID']=$userID;
     //echo $userID; //test to make sure customer id in sql database corresponds
     //header('Location: http://localhost/DinnersDirecHuiEn/startbootstrap-shop-homepage-gh-pages/index.html');
