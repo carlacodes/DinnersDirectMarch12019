@@ -12,10 +12,10 @@ $userIDpullorderdatainstance=$_SESSION['userID'];//$y is any declared variable
 //echo $userIDpullorderdatainstance;
 
 
-$query = "SELECT cus.first_name, cus.last_name, ord.orderitemID, ord.DateOrdered, ord.amountPaid FROM orders ord
+$query = "SELECT cus.first_name, cus.last_name, ordspec.time_date, ordspec.price, ordspec.quantity, ordspec.item_id FROM ordersthis ordspec
 JOIN customers cus /*alias of cus for customer*/
-    on ord.customerID = cus.customerID
-WHERE ord.customerID = '" . $userIDpullorderdatainstance."'";
+    on ordspec.customerID = cus.customerID
+WHERE ordspec.customerID = '" . $userIDpullorderdatainstance."'";
 
 
 //search database
@@ -119,12 +119,14 @@ mysqli_close($connection);
             <th>Order item ID</th>
             <th>Date ordered</th>
             <th>Amount paid</th>
+            <th> Quantity</th>
         </tr>
         <?php  while( $user=mysqli_fetch_assoc($result)){ ?>
         <tr>
-            <td><?php print_r($user['orderitemID']) ?> </td>
-            <td><?php echo $user['DateOrdered'] ?></td>
-            <td><?php echo $user['amountPaid'] ?></td>
+            <td><?php print_r($user['item_id']) ?> </td>
+            <td><?php echo $user['time_date'] ?></td>
+            <td><?php echo $user['price'] ?></td>
+            <td><?php echo $user['quantity'] ?></td>
         </tr>
 
 <? }?>

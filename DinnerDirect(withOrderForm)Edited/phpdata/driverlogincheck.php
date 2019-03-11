@@ -33,7 +33,7 @@ if (empty($result)){
 }
 if (mysqli_num_rows($result) > 0) {
 
-    echo '<script type="text/javascript"> alert("You are logged in!") </script>';
+    echo '<script type="text/javascript"> alert("You are logged in!"); location="../index.html"; </script>';
     //echo
     $user = mysqli_fetch_assoc($result);
     //echo "Welcome";
@@ -46,7 +46,8 @@ if (mysqli_num_rows($result) > 0) {
     //header('Location: http://localhost/DinnersDirecHuiEn/startbootstrap-shop-homepage-gh-pages/index.html');
     //exit;
 } else {
-        echo "Cannot find the selected user. Please try again or create a new account.";
+
+    echo '<script type="text/javascript"> alert("Cannot find the selected user. Please try again or create a new account.!"); location="../index.html"; </script>';
         echo "$emailSql, $passwordSQL";
         closeDb($connection);
 }
