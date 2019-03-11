@@ -65,14 +65,14 @@ if (mysqli_num_rows($result) > 0) {
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Dinners Direct</a>
+        <a class="navbar-brand" href="../index.html">Dinners Direct</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="index.html" collapse="navbar-collapse" id="navbarResponsive">
+        <div class="../index.html" collapse="navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home
+                    <a class="nav-link" href="../index.html">Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
@@ -126,8 +126,7 @@ if (mysqli_num_rows($result) > 0) {
             <h1 class="my-4">DinnersDirect</h1>
             <div class="list-group">
                 <a href="menu.php" class="list-group-item">Menu</a>
-                <a href="order.php" class="list-group-item">Order</a>
-                <a href="#" class="list-group-item">Category 3</a>
+
             </div>
 
         </div>
@@ -143,7 +142,7 @@ if (mysqli_num_rows($result) > 0) {
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img class="d-block img-fluid" src="img/frontpage900.jpg" alt="First slide">
+                        <img class="d-block img-fluid" src="../img/frontpage900.jpg" alt="First slide">
                     </div>
                     <div class="carousel-item">
                         <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
@@ -166,10 +165,10 @@ if (mysqli_num_rows($result) > 0) {
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="https://i.imgur.com/9TwJKfV.jpg" alt="Croissant"></a>
+                        <img class="card-img-top" src="https://i.imgur.com/9TwJKfV.jpg" alt="Croissant">
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="menu.php">Croissant</a>
+                                Croissant
                             </h4>
                             <h5>£1.30</h5>
                             <p class="card-text">Breakfast pastry, prefect for a rush morning!</p>
@@ -182,10 +181,10 @@ if (mysqli_num_rows($result) > 0) {
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="https://i.imgur.com/ncYf27F.jpg" alt="Donuts"></a>
+                        <img class="card-img-top" src="https://i.imgur.com/ncYf27F.jpg" alt="Donuts">
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="#">Donuts</a>
+                                Donuts
                             </h4>
                             <h5>£2.00</h5>
                             <p class="card-text">Colourful glazed donuts for sweet cravings.</p>
@@ -198,10 +197,10 @@ if (mysqli_num_rows($result) > 0) {
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="https://i.imgur.com/opKASPl.jpg" alt=""></a>
+                        <img class="card-img-top" src="https://i.imgur.com/opKASPl.jpg" alt="">
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="#">Fruit Cake</a>
+                                Fruit Cake
                             </h4>
                             <h5>£3.50</h5>
                             <p class="card-text">Delicious creamy layered cake topped with a strawberry !</p>
@@ -214,10 +213,10 @@ if (mysqli_num_rows($result) > 0) {
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="https://i.imgur.com/pt2WDxj.jpg" alt=""></a>
+                        <img class="card-img-top" src="https://i.imgur.com/pt2WDxj.jpg" alt="">
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="#">Stir Fried Flat Rice Noodles</a>
+                                Stir Fried Flat Rice Noodles
                             </h4>
                             <h5>£7.00</h5>
                             <p class="card-text">Stir fried over high heat with soy sauce</p>
@@ -230,10 +229,10 @@ if (mysqli_num_rows($result) > 0) {
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="https://i.imgur.com/lDyqZbg.jpg" alt=""></a>
+                        <img class="card-img-top" src="https://i.imgur.com/lDyqZbg.jpg" alt="">
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="#">Gamberi Spaghetti</a>
+                                Gamberi Spaghetti
                             </h4>
                             <h5>£9.50</h5>
                             <p class="card-text">Pasta with tomato sauce with gently cooked prawns</p>
@@ -246,10 +245,10 @@ if (mysqli_num_rows($result) > 0) {
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="https://i.imgur.com/400kbjs.jpg?1" alt=""></a>
+                        <img class="card-img-top" src="https://i.imgur.com/400kbjs.jpg?1" alt="">
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="#">Kimchi Fried Rice</a>
+                                Kimchi Fried Rice
                             </h4>
                             <h5>£8.50</h5>
                             <p class="card-text">Stir fried well-fermented kimchi with chilled rice topped with a sunny side up!</p>
@@ -275,16 +274,15 @@ if (mysqli_num_rows($result) > 0) {
 <!-- Footer -->
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+        <p class="m-0 text-center text-white">Copyright &copy; DinnersDirect 2019</p>
     </div>
     <!-- /.container -->
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
 </html>
-

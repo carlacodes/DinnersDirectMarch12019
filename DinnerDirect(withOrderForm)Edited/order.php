@@ -21,7 +21,6 @@
 <body>
 
 <!-- Navigation -->
-<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">Dinners Direct</a>
@@ -45,6 +44,10 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="createnewaccount.html">Create Account</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="driverlogin.html">Driver Login</a>
                 </li>
 
                 <li class="nav-item">
