@@ -86,7 +86,7 @@ mysqli_close($connection);
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="../order.php">Order</a>
+                    <a class="nav-link" href="../menu.php">Order</a>
                     <!--<a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>!-->
                 </li>
 
