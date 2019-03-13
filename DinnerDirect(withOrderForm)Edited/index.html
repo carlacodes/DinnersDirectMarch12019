@@ -38,7 +38,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="phpdata/pullorderdata.php">MyAccount</a>
+              <a class="nav-link" href="phpdata/pullorderdata.php">My Account</a>
             </li>
 
             <li class="nav-item">
@@ -73,20 +73,22 @@
 
         <div class="col-lg-3">
 
-          <h1 class="my-4">DinnersDirect</h1>
+          <h2 class="my-4">Welcome to DinnersDirect</h2>
           <div class="list-group">
-            <a href="menu.php" class="list-group-item">Menu</a>
+            <h5><a href="menu.php">Menu</a></h5>
 
           </div>
-          <h1> login to your account </h1>
+          <fieldset>
+            <legend>Log in</legend>
           <form method="post" action="phpdata/logincheck.php">
             Your Email:<br>
             <input type="email" name="email" required><br>
             Your password:<br>
             <input type="password" name="password" required><br>
-            <br><br>
+            <br>
             <input type="submit" class="btn btn-primary" value="Submit" required>
           </form>
+            </fieldset>
         </div>
         <!-- /.col-lg-3 -->
 
