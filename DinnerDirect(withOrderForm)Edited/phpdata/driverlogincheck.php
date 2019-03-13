@@ -33,7 +33,7 @@ if (empty($result)){
 }
 if (mysqli_num_rows($result) > 0) {
 
-    echo '<script type="text/javascript"> alert("You are logged in!"); location="../index.html"; </script>';
+    echo '<script type="text/javascript"> alert("You are logged in!"); location="pulldriverschedule.php"; </script>';
     //echo
     $user = mysqli_fetch_assoc($result);
     //echo "Welcome";
@@ -41,6 +41,7 @@ if (mysqli_num_rows($result) > 0) {
     //echo $user['last_name'];
     $driverID=$user['driverID'];
     $_SESSION['driverID']=$driverID;
+    $_SESSION['schoolIDdriver']=$user['schoolID'];
     require("pulldriverschedule.php");
     //echo $userID; //test to make sure customer id in sql database corresponds
     //header('Location: http://localhost/DinnersDirecHuiEn/startbootstrap-shop-homepage-gh-pages/index.html');

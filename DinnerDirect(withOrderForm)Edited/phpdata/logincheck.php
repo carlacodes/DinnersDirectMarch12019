@@ -42,6 +42,8 @@ if (mysqli_num_rows($result) > 0) {
     //echo $user['last_name'];
     $userID=$user['customerID'];
     $_SESSION['userFirstName'] =$user['first_name'];
+    $_SESSION['schoolID']=$user['schoolID'];
+
     echo '<script type="text/javascript"> alert("<?php echo $userID; ?>"); location="../index.html"; </script>';
     $_SESSION['userID']=$userID;
     //echo $userID; //test to make sure customer id in sql database corresponds

@@ -22,10 +22,13 @@ if(isset($_SESSION["cart_item"])){
 
         $item_date = $delivery;
 
+        $schoolID=$_SESSION['schoolID'];
+
         $customerID=$_SESSION['userID'];
 
-        $query = "INSERT INTO ordersthis (item_id, quantity, price, time_date, customerID) " .
-            "VALUES ('$item_id', '$item_quantity', '$item_price', '$item_date', '$customerID')";
+
+        $query = "INSERT INTO ordersthis (item_id, quantity, price, time_date, customerID, schoolID) " .
+            "VALUES ('$item_id', '$item_quantity', '$item_price', '$item_date', '$customerID', '$schoolID')";
         mysqli_query($conn, $query);
 
         //$value is the array that has the information
