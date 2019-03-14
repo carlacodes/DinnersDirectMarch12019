@@ -12,7 +12,7 @@ $driverschoolIDpullorderdatainstance=$_SESSION['schoolIDdriver'];//$y is any dec
 echo $driverschoolIDpullorderdatainstance; //for debugging
 
 
-$query = "SELECT driv.first_name, driv.last_name, sch.schoolname, ordspec.order_id, ordspec.time_date, ordspec.price, ordspec.DateOrdered FROM ordersthis ordspec
+$query = "SELECT driv.first_name, driv.last_name, sch.schoolname, ordspec.order_id, ordspec.time_date, ordspec.price, ordspec.DateOrdered FROM orderlist ordspec
 JOIN drivers driv /*alias of cus for customer*/
     on ordspec.schoolID = driv.schoolID
 JOIN schools sch /*alias of cus for customer*/

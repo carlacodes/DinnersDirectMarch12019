@@ -12,10 +12,11 @@ $userIDpullorderdatainstance=$_SESSION['userID'];//$y is any declared variable
 //echo $userIDpullorderdatainstance;
 
 
-$query = "SELECT cus.first_name, cus.last_name, ordspec.time_date, ordspec.price, ordspec.quantity, ordspec.item_id FROM ordersthis ordspec
+$query = "SELECT cus.first_name, cus.last_name, ordspec.time_date, ordspec.price, orderitem.quantity, orderitem.item_id, ordspec.order_id FROM orderlist ordspec
 JOIN customers cus /*alias of cus for customer*/
-    on ordspec.customerID = cus.customerID
-WHERE ordspec.customerID = '" . $userIDpullorderdatainstance."'";
+    on ordspec.customer_id = cus.customerID
+    JOIN orderitem ON ordspec.order_id = orderitem.order_id
+WHERE ordspec.customer_id = '" . $userIDpullorderdatainstance."'";
 
 $query3 = "SELECT first_name, last_name FROM customers
 WHERE customers.customerID = '" . $userIDpullorderdatainstance."'";
@@ -112,7 +113,7 @@ mysqli_close($connection);
             <th>Name</th>
         </tr>
         <tr>
-            <td><?php print_r($user2);
+            <td><?php //print_r($user2);
             $names=($result2->fetch_assoc()); //instance var to just get the first and last name
                 $names3=($result3->fetch_assoc());
                     echo $names3['first_name']. " ".$names3['last_name'] ?></td>
@@ -120,13 +121,15 @@ mysqli_close($connection);
 
 
         <tr>
+            <th>Order ID</th>
             <th>Order item ID</th>
             <th>Date ordered</th>
-            <th>Amount paid</th>
+            <th>Total Price</th>
             <th> Quantity</th>
         </tr>
         <?php  while( $user=mysqli_fetch_assoc($result)){ ?>
         <tr>
+            <td><?php echo $user['order_id'] ?></td>
             <td><?php print_r($user['item_id']) ?> </td>
             <td><?php echo $user['time_date'] ?></td>
             <td><?php echo $user['price'] ?></td>

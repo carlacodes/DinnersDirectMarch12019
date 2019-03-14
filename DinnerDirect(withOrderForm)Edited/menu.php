@@ -5,33 +5,36 @@ $db_handle = new DBConnect();
 if(!empty($_GET["action"])) {
     switch($_GET["action"]) {
         case "add":
-            $orderItem = $db_handle->runQuery("SELECT * FROM mealdeal WHERE ID='" . $_GET["ID"] . "'");
-            $orderItemArray = array($orderItem[0]["ID"]=>array('name'=>$orderItem[0]["name"], 'ID'=>$orderItem[0]["ID"], 'description'=>$orderItem[0]["description"], 'quantity'=>$_POST["quantity"], 'price'=>$orderItem[0]["price"], 'image'=>$orderItem[0]["image"]));
+            if(!empty($_POST["quantity"])) {
+                $loggedInUserID = $_SESSION['userID'];
+                $orderItem = $db_handle->runQuery("SELECT * FROM mealdeal WHERE code='" . $_GET["code"] . "'");
+//                $orderItemArray = array($loggedInUserID[0]['userID']=>array($orderItem[0]["code"]=>array('name'=>$orderItem[0]["name"], 'code'=>$orderItem[0]["code"], 'description'=>$orderItem[0]["description"], 'quantity'=>$_POST["quantity"], 'price'=>$orderItem[0]["price"], 'image'=>$orderItem[0]["image"])));
+                $orderItemArray = array($orderItem[0]["code"]=>array('name'=>$orderItem[0]["name"], 'ID'=>$orderItem[0]["ID"], 'code'=>$orderItem[0]["code"], 'description'=>$orderItem[0]["description"], 'quantity'=>$_POST["quantity"], 'price'=>$orderItem[0]["price"], 'image'=>$orderItem[0]["image"]));
 
-            if(!empty($_SESSION["cart_item"])) {
-                if(in_array($orderItem[0]["ID"],array_keys($_SESSION["cart_item"]))) {
-                    foreach($_SESSION["cart_item"] as $k => $v) {
-                        if($orderItem[0]["ID"] == $k) {
-                            if(empty($_SESSION["cart_item"][$k]["quantity"])) {
-                                $_SESSION["cart_item"][$k]["quantity"] = 0;
+                if(!empty($_SESSION["cart_item"])) {
+                    if(in_array($orderItem[0]["code"],array_keys($_SESSION["cart_item"]))) {
+                        foreach($_SESSION["cart_item"] as $k => $v) {
+                            if($orderItem[0]["code"] == $k) {
+                                if(empty($_SESSION["cart_item"][$k]["quantity"])) {
+                                    $_SESSION["cart_item"][$k]["quantity"] = 0;
+                                }
+                                $_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
                             }
-                            $_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
                         }
+                    } else {
+                        $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$orderItemArray);
                     }
                 } else {
-                    $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$orderItemArray);
+                    $_SESSION["cart_item"] = $orderItemArray;
                 }
-            } else {
-                $_SESSION["cart_item"] = $orderItemArray;
             }
-
 
             break;
 
         case "remove":
             if(!empty($_SESSION["cart_item"])) {
                 foreach($_SESSION["cart_item"] as $k => $v) {
-                    if($_GET["ID"] == $k)
+                    if($_GET["code"] == $k)
                         unset($_SESSION["cart_item"][$k]);
                     if(empty($_SESSION["cart_item"]))
                         unset($_SESSION["cart_item"]);
@@ -41,17 +44,9 @@ if(!empty($_GET["action"])) {
         case "empty":
             unset($_SESSION["cart_item"]);
             break;
-
     }
 }
-
-
 ?>
-
-
-
-
-
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
@@ -81,7 +76,6 @@ if(!empty($_GET["action"])) {
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Home
-                        <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -89,31 +83,22 @@ if(!empty($_GET["action"])) {
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="phpdata/pullorderdata.php">My Account</a>
+                    <a class="nav-link" href="phpdata/pullorderdata.php">MyAccount</a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="createnewaccount.html">Create Account</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="driverlogin.html">Driver Login</a>
-                </li>
-
                 <li class="nav-item active">
-                    <a class="nav-link" href="menu.php">Order</a>
-                    <!--<a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>!-->
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="phpdata/logOut.php">Log Out</a>
+                    <a class="nav-link" href="order.php">Order</a>
+                    <span class="sr-only">(current)</span>
                     <!--<a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>!-->
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-
 <!-- /.Navigation -->
 
 
@@ -144,14 +129,14 @@ if(!empty($_GET["action"])) {
                 <div class="txt-heading">Products</div>
                 <div class="row">
                     <?php
-                    $product_array = $db_handle->runQuery("SELECT * FROM mealdeal ORDER BY ID ASC");
+                    $product_array = $db_handle->runQuery("SELECT * FROM mealdeal ORDER BY id ASC");
                     if (!empty($product_array)) {
                         foreach($product_array as $key=>$value){
                             ?>
                             <!--<div class="product-item">-->
                             <div class="col-lg-4 col-md-6 mb-4" >
                                 <div class="card" style="height: 23rem;">
-                                    <form method="post" action="menu.php?action=add&ID=<?php echo $product_array[$key]["ID"]; ?>">
+                                    <form method="post" action="menu.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
                                         <img class="card-img-top" style="height: 200px;" src="<?php echo $product_array[$key]["image"]; ?>">
                                         <div class="product-title"><?php echo $product_array[$key]["name"]; ?></div>
                                         <div class="product-description"><?php echo $product_array[$key]["description"]; ?></div>
@@ -162,16 +147,15 @@ if(!empty($_GET["action"])) {
                                                     <option selected="selected">1</option>
                                                     <option>2</option>
                                                     <option>3</option>
+                                                    <option>3</option>
                                                     <option>4</option>
-                                                    <option>5</option>
                                                 </select>
                                                 <input type="submit" value="Add to Cart" class="btnAddAction" /></div>
                                         </div>
-
                                     </form>
                                 </div>
                             </div>
-                            <!--</div>-->
+
                             <?php
                         }
                     }
@@ -183,7 +167,6 @@ if(!empty($_GET["action"])) {
                 <div id="shopping-cart">
                     <div class="txt-heading">Shopping Cart</div>
 
-                    <a id="btnEmpty" href="menu.php?action=empty">Empty Cart</a>
                     <?php
                     if(isset($_SESSION["cart_item"])){
                         $total_quantity = 0;
@@ -209,7 +192,7 @@ if(!empty($_GET["action"])) {
                                     <td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
                                     <td  style="text-align:right;"><?php echo "$ ".$item["price"]; ?></td>
                                     <td  style="text-align:right;"><?php echo "$ ". number_format($item_price,2); ?></td>
-                                    <td style="text-align:center;"><a href="menu.php?action=remove&ID=<?php echo $item["ID"]; ?>" ><img class="btnRemoveAction" src="img/delete.png" alt="Remove Item" /></a></td>
+                                    <td style="text-align:center;"><a href="menu.php?action=remove&code=<?php echo $item["code"]; ?>" ><img class="btnRemoveAction" src="img/delete.png" alt="Remove Item" /></a></td>
                                 </tr>
                                 <?php
                                 $total_quantity += $item["quantity"];
@@ -234,7 +217,6 @@ if(!empty($_GET["action"])) {
 
                     if(!empty($_SESSION["cart_item"])) {
                         ?>
-
                         <a href="checkout.php" class="btnCheckout" style=" background-color: #ffffff;
             border: #21d000 1px solid;
             padding: 5px 10px;
@@ -243,6 +225,7 @@ if(!empty($_GET["action"])) {
             text-decoration: none;
             border-radius: 3px;
             margin: 10px 0px;">Checkout</a>
+                        <a id="btnEmpty" href="menu.php?action=empty">Empty Cart</a>
 
                         <?php
                     }
@@ -253,10 +236,6 @@ if(!empty($_GET["action"])) {
 
                 </div>
                 <!-- /.Shopping Cart -->
-
-                <div>
-
-                </div>
             </div>
 
         </div>
@@ -269,7 +248,7 @@ if(!empty($_GET["action"])) {
 <!-- Footer -->
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; DinnersDirect 2019</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
     </div>
     <!-- /.container -->
 </footer>
