@@ -11,6 +11,51 @@ if($_SERVER['REQUEST_METHOD']=$_POST){
 
 
 if(isset($_SESSION["cart_item"])){
+print_r($_SESSION["cart_item"]);
+
+echo "<br>";
+
+
+    $schoolID=$_SESSION['schoolID'];
+
+    $customerID=$_SESSION['userID'];
+
+    $driver_id=$_SESSION['schoolIDdriver'];
+
+    $item_date = $delivery;
+
+    $total_price = "";
+
+    echo  $driver_id;
+
+    foreach ($_SESSION["cart_item"] as $item => $value ){
+        $item_price = $_SESSION["cart_item"][$item]['price'];
+        $item_quantity = $_SESSION["cart_item"][$item]['quantity'];
+
+        $sub_price = $item_price * $item_quantity;
+        $total_price += $sub_price;
+    }
+
+    echo $total_price;
+    echo "<br><br>";
+
+    echo $_SESSION['schoolIDdriver'];
+    echo "<br><br>nono";
+
+    $query = "INSERT INTO orderlist (customer_id, school_id, time_date, price, driver_id) VALUES ('$customerID', '$schoolID', '$item_date', '$total_price', '1')";
+
+    echo "<br> query here: " . $query;
+    echo "<br>";
+    if(mysqli_query($conn, $query)) {
+        echo "submit query succeclesflsdjf<br>";
+    }else {
+        echo "nononono<br>";
+    }
+    ;
+
+    $order_id = mysqli_insert_id($conn);
+
+    echo "<br>order id here: " . $order_id;
 
     foreach ($_SESSION["cart_item"] as $item => $value ){
         echo $item." => ".$value. "<br>";
@@ -20,15 +65,18 @@ if(isset($_SESSION["cart_item"])){
 
         $item_price = $_SESSION["cart_item"][$item]['price'];
 
-        $item_date = $delivery;
-
-        $schoolID=$_SESSION['schoolID'];
-
-        $customerID=$_SESSION['userID'];
 
 
-        $query = "INSERT INTO ordersthis (item_id, quantity, price, time_date, customerID, schoolID) " .
-            "VALUES ('$item_id', '$item_quantity', '$item_price', '$item_date', '$customerID', '$schoolID')";
+
+
+        $item_code = $_SESSION["cart_item"][$item]['code'];
+
+        $timestamp = time();
+        $time = (date("F d, Y h:i:s A", $timestamp));
+
+        $query = "INSERT INTO orderitem (order_id, item_id, quantity) " .
+            "VALUES ('$order_id', '$item_id', '$item_quantity')";
+
         mysqli_query($conn, $query);
 
         //$value is the array that has the information
@@ -36,6 +84,7 @@ if(isset($_SESSION["cart_item"])){
         //array_walk_recursive($value,"myfunction"); //this one helps us visualise the array to debug
 
     }
-    echo '<script type="text/javascript"> alert("Payment successful!");  location="phpdata/pullorderdata.php";</script>';
 
+    echo '<script type="text/javascript"> alert("Payment successful!");  location="phpdata/pullorderdata.php";</script>';
+    unset($_SESSION["cart_item"]);
 }
