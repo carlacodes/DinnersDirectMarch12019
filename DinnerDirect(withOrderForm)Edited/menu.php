@@ -92,7 +92,7 @@ if(!empty($_GET["action"])) {
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="../driverlogin.html">Driver Login</a>
+                    <a class="nav-link" href="driverlogin.html">Driver Login</a>
                 </li>
 
                 <li class="nav-item active">
