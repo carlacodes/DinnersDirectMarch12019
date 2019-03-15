@@ -20,13 +20,13 @@ echo "<br>";
 
     $customerID=$_SESSION['userID'];
 
-    $driver_id=$_SESSION['schoolIDdriver'];
+    $driver_id=$_SESSION['driverID'];
 
     $item_date = $delivery;
 
     $total_price = "";
 
-    echo  $driver_id;
+
 
     foreach ($_SESSION["cart_item"] as $item => $value ){
         $item_price = $_SESSION["cart_item"][$item]['price'];
@@ -34,15 +34,16 @@ echo "<br>";
 
         $sub_price = $item_price * $item_quantity;
         $total_price += $sub_price;
+
     }
 
     echo $total_price;
     echo "<br><br>";
 
-    echo $_SESSION['schoolIDdriver'];
+    echo  $driver_id;
     echo "<br><br>nono";
 
-    $query = "INSERT INTO orderlist (customer_id, school_id, time_date, price, driver_id) VALUES ('$customerID', '$schoolID', '$item_date', '$total_price', '1')";
+    $query = "INSERT INTO orderlist (customer_id, school_id, time_date, price, driver_id) VALUES ('$customerID', '$schoolID', '$item_date', '$total_price', ' $driver_id')";
 
     echo "<br> query here: " . $query;
     echo "<br>";

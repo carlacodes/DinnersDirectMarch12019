@@ -52,6 +52,7 @@
 <div class="container">
 
     <?php
+    session_start();
 
     if($_SESSION['logged']==1)
     {

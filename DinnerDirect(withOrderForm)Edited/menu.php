@@ -69,7 +69,7 @@ if(!empty($_GET["action"])) {
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="../index.html">Dinners Direct</a>
+        <a class="navbar-brand" href="index.html">Dinners Direct</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -84,7 +84,7 @@ if(!empty($_GET["action"])) {
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="pullorderdata.php">My Account</a>
+                    <a class="nav-link" href="phpdata/pullorderdata.php">My Account</a>
                 </li>
 
                 <li class="nav-item">
@@ -102,7 +102,7 @@ if(!empty($_GET["action"])) {
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="logOut.php">Log Out</a>
+                    <a class="nav-link" href="phpdata/logOut.php">Log Out</a>
                     <!--<a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>!-->
                 </li>
             </ul>

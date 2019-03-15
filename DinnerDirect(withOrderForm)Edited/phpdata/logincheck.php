@@ -21,8 +21,11 @@ $passwordSQL=$_POST['password'];
 /*$qryAdd = "INSERT INTO customer (first_name, last_name, email) VALUES (";
 $qryAdd .= "'" . $firstName . "', '" . $familyName . "', '" . $emailSql . "')";*/
 
-$qryFind = "SELECT * FROM customers ";
-$qryFind .= " WHERE password = '" . $passwordSQL ."' AND email = '" . $emailSql . "'";
+//$qryFind = "SELECT * FROM customers";
+$qryFind = "Select c.*, d.driverID from drivers d, customers c where c.schoolID = d.schoolID";
+$qryFind .= " AND c.password = '" . $passwordSQL ."' AND c.email = '" . $emailSql . "'";
+
+
 
 $connection = connectToDb();
 //do something there to force unset all the data, on SLIDE Refer to the PHP manual and use:
@@ -36,6 +39,7 @@ if (mysqli_num_rows($result) > 0) {
 
     echo '<script type="text/javascript"> alert("You are logged in!"); location="../index.html";</script>';
     $user = mysqli_fetch_assoc($result);
+
     $_SESSION['logged'] = 1;
     //echo "Welcome";
     //echo $user['first_name'];
@@ -43,6 +47,14 @@ if (mysqli_num_rows($result) > 0) {
     $userID=$user['customerID'];
     $_SESSION['userFirstName'] =$user['first_name'];
     $_SESSION['schoolID']=$user['schoolID'];
+//    $qryFind2 = "SELECT driverID FROM drivers WHERE schoolID ='" . $user['schoolID'] ."')";
+//    $result2 = mysqli_query($connection, $qryFind);
+//    $user2 = mysqli_fetch_assoc($result);
+    $_SESSION['driverID']=$user['driverID'];
+
+
+
+//    $_SESSION['driverID']=$user['driverID'];
 
     echo '<script type="text/javascript"> alert("<?php echo $userID; ?>"); location="../index.html"; </script>';
     $_SESSION['userID']=$userID;
