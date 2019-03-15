@@ -151,7 +151,6 @@ if (empty($_SESSION['userID'])){
 
                 </div>
                 <!--delivery time -->
-
             </div>
             <!-- /.Shopping Cart -->
 
