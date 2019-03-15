@@ -76,11 +76,11 @@ if(!empty($_GET["action"])) {
         <div class="../index.html" collapse="navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Home
+                    <a class="nav-link" href="index.html">Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../about.html">About</a>
+                    <a class="nav-link" href="about.html">About</a>
                 </li>
 
                 <li class="nav-item">
@@ -88,7 +88,7 @@ if(!empty($_GET["action"])) {
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="../createnewaccount.html">Create Account</a>
+                    <a class="nav-link" href="createnewaccount.html">Create Account</a>
                 </li>
 
                 <li class="nav-item">
@@ -96,7 +96,7 @@ if(!empty($_GET["action"])) {
                 </li>
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="../menu.php">Order</a>
+                    <a class="nav-link" href="menu.php">Order</a>
                     <span class="sr-only">(current)</span>
                     <!--<a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>!-->
                 </li>
