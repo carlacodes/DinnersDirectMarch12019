@@ -2,7 +2,7 @@
 class DBConnect {
     private $host = "localhost";
     private $user = "root";
-    private $password = "root";
+    private $password = "";
     private $database = "dinnersdirect";
     private $connection;
 
