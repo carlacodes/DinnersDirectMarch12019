@@ -8,7 +8,9 @@ $conn = $db_handle -> connectDB();
 if($_SERVER['REQUEST_METHOD']=$_POST){
     $delivery = $_POST['dt'];
 }
+?>
 
+<?php
 
 if(isset($_SESSION["cart_item"])){
 print_r($_SESSION["cart_item"]);

@@ -136,21 +136,14 @@ if (empty($_SESSION['userID'])){
 
                 <!--delivery time -->
                 <div>
-                    <form method="post" action=payment.php >
-                        <label for="dt"> Choose Delivery Date and Time: </label>
-                        <input name="dt" type="datetime-local" required/>
-                        <button type="submit" href="payment.php" class="btnCheckout" style=" background-color: #ffffff;
-                                border: #21d000 1px solid;
-                                padding: 5px 10px;
-                                color: #21d000;
-                                float: right;
-                                text-decoration: none;
-                                border-radius: 3px;
-                                margin: 10px 0px;">Make Payment</button>
-                    </form>
+
+
+                    <?php
+                    include  'deliverydate.php'; ?>
+
 
                 </div>
-                <!--delivery time -->
+                <!--delivery time-->
             </div>
             <!-- /.Shopping Cart -->
 
@@ -170,7 +163,7 @@ if (empty($_SESSION['userID'])){
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!--<script src="vendor/jquery/jquery.min.js"></script>-->
+<!--<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
 </body>
 </html>

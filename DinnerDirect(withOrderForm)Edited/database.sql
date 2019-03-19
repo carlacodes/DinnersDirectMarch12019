@@ -79,7 +79,7 @@ CREATE TABLE orderlist (
                             customer_id int(10) UNSIGNED NOT NULL,
                             school_id int(10) UNSIGNED NOT NULL,
                             driver_id int(10) UNSIGNED,
-                            time_date date NOT NULL,
+                            time_date text NOT NULL,
                             price double(10,2) UNSIGNED,
                             order_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP  ON UPDATE CURRENT_TIMESTAMP,
                             PRIMARY KEY(order_id),
