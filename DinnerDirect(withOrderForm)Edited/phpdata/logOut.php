@@ -36,4 +36,3 @@ mysqli_close($connection);
 //logging out alert to notify user
 echo '<script type="text/javascript"> alert("You are logged out!");  location="../index.html";</script>';
 
-?>

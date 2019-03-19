@@ -138,22 +138,10 @@ mysqli_close($connection);
             <td><?php echo $user['time_date'] ?></td>
 
         </tr>
-
-<? }?>
     </table>
     <div class="row">
 
     </div>
-    <?php
-    // Free the results from memory
-    //unset all variables
-//at the start of every page runs that code
-    mysqli_free_result($result);
-    mysqli_free_result($result2);
-
-    //session_destroy();
-
-    ?>
 
 </div>
 
@@ -167,5 +155,14 @@ mysqli_close($connection);
 
 </body>
 </html>
+
+<?php
+    // Free the results from memory
+    //unset all variables
+//at the start of every page runs that code
+    mysqli_free_result($result);
+    mysqli_free_result($result2);}
+
+    //session_destroy();
 
 
