@@ -3,6 +3,9 @@ if(session_status() == PHP_SESSION_NONE){
     //session has not started
     session_start();
 }
+if (empty($_SESSION['userID'])){
+    echo '<script type="text/javascript"> alert("Please login first!"); location="../index.php";</script>';
+}
 
 $MyAccount = 'active';
 include 'header_layout2.php';
@@ -14,6 +17,7 @@ $connection = connectToDb();
 //echo "$srch";
 
 $userIDpullorderdatainstance=$_SESSION['userID'];//$y is any declared variable
+
 //echo $userIDpullorderdatainstance;
 
 
