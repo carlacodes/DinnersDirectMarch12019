@@ -10,7 +10,7 @@ include 'cart_action.php';
 ?>
 
     <!-- Custom styles for this template -->
-    <link href="css/menu2.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
     <link href="css/shop-homepage.css" rel="stylesheet">
     <title>Order</title>
 
@@ -86,9 +86,6 @@ include 'cart_action.php';
                   $_SESSION["additem"] = 0;
                   include 'cart.php';
                   ?>
-
-
-
 
                 <!-- /.Shopping Cart -->
 

@@ -74,28 +74,24 @@
                 if(!empty($_SESSION["userID"]) || !empty($_SESSION['schoolIDdriver']))
                 {
 
-                            if(isset($logOut)){
-                                echo $logOut;
-                            }
-                            else {
-                                echo " ";
-                            } ?>
-                                <?= '"> <a class="nav-link" href="phpdata/logOut.php">Logout</a>'?>
-
-
+                    if(isset($logOut)){
+                        echo $logOut;
+                    }
+                    else {
+                        echo " ";
+                    } ?>
+                        <?= '"> <a class="nav-link" href="phpdata/logOut.php">Logout</a>'?>
 
                 <?php
                 }
                 else {
-                                        if(isset($login)){
-                                        echo $login;
-                                    }
-                                    else {
-                                        echo " ";
-                                    } ?>
-                                        <?= '"> <a class="nav-link" href="login.php">Login</a>'?>
-
-
+                        if(isset($login)){
+                        echo $login;
+                    }
+                    else {
+                        echo " ";
+                    } ?>
+                        <?= '"> <a class="nav-link" href="login.php">Login</a>'?>
 
                 <?php
                 }
@@ -103,15 +99,6 @@
                 ?>
 
                 <?='<li>'?>
-
-
-
-
-
-
-
-
-
 
 
             </ul>

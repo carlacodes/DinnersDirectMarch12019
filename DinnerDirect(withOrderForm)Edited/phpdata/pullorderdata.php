@@ -15,7 +15,7 @@ $userIDpullorderdatainstance=$_SESSION['userID'];//$y is any declared variable
 //echo $userIDpullorderdatainstance;
 
 
-$query = "SELECT cus.first_name, cus.last_name, ordspec.order_date, ordspec.price, orderitem.quantity, orderitem.item_id, ordspec.order_id, mealdeal.name, mealdeal.ID FROM orderlist ordspec 
+$query = "SELECT cus.first_name, cus.last_name, ordspec.order_date, ordspec.price, orderitem.quantity, orderitem.item_id, ordspec.order_id, mealdeal.name, mealdeal.ID, ordspec.date, ordspec.time FROM orderlist ordspec 
 JOIN customers cus on ordspec.customer_id = cus.customerID
 JOIN orderitem ON ordspec.order_id = orderitem.order_id
 JOIN mealdeal ON orderitem.item_id = mealdeal.ID
@@ -43,7 +43,7 @@ mysqli_close($connection);
 
     <!-- Custom styles for this template -->
     <link href="../css/shop-homepage.css" rel="stylesheet">
-    <link href="../css/menu2.css" rel="stylesheet">
+    <link href="../css/menu.css" rel="stylesheet">
     <title>My Account</title>
 
 </head>
@@ -79,6 +79,8 @@ mysqli_close($connection);
                 <th>Quantity</th>
                 <th>Total Price</th>
                 <th>Date ordered</th>
+                <th>Delivery Date</th>
+                <th>Delivery Time</th>
 
             </tr>
             <?php while ($user = mysqli_fetch_assoc($result)) { ?>
@@ -89,6 +91,8 @@ mysqli_close($connection);
                     <td><?php echo $user['quantity'] ?></td>
                     <td><?php echo $user['price'] ?></td>
                     <td><?php echo $user['order_date'] ?></td>
+                    <td><?php echo $user['date'] ?></td>
+                    <td><?php echo $user['time'] ?></td>
 
                 </tr>
 

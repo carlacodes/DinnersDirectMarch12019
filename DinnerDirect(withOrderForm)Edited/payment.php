@@ -14,9 +14,6 @@ if($_SERVER['REQUEST_METHOD']=$_POST){
 <?php
 
 if(isset($_SESSION["cart_item"])){
-print_r($_SESSION["cart_item"]);
-
-echo "<br>";
 
 
     $schoolID=$_SESSION['schoolID'];
@@ -42,46 +39,21 @@ echo "<br>";
 
     }
 
-    echo $delivery_time;
-    echo "<br><br>";
-    echo $total_price;
-    echo "<br><br>";
-    echo $sub_price;
-    echo "<br><br>";
-    echo  $driver_id;
-    echo "<br><br>nono";
 
     $query = "INSERT INTO orderlist (customer_id, school_id, date, time, price, driver_id) VALUES ('$customerID', '$schoolID', '$item_date', '$item_time', '$total_price', ' $driver_id')";
 
-    echo "<br> query here: " . $query;
-    echo "<br>";
-    if(mysqli_query($conn, $query)) {
-        echo "submit query succeclesflsdjf<br>";
-    }else {
-        echo "nononono<br>";
-    }
-    ;
-
     $order_id = mysqli_insert_id($conn);
 
-    echo "<br>order id here: " . $order_id;
 
     foreach ($_SESSION["cart_item"] as $item => $value ){
-        echo $item." => ".$value. "<br>";
+
         $item_id = $_SESSION["cart_item"][$item]['ID'];
 
         $item_quantity = $_SESSION["cart_item"][$item]['quantity'];
 
         $item_price = $_SESSION["cart_item"][$item]['price'];
 
-
-
-
-
         $item_code = $_SESSION["cart_item"][$item]['code'];
-
-        $timestamp = time();
-        $time = (date("F d, Y h:i:s A", $timestamp));
 
         $query = "INSERT INTO orderitem (order_id, item_id, quantity) " .
             "VALUES ('$order_id', '$item_id', '$item_quantity')";

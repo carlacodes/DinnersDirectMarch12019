@@ -10,7 +10,7 @@ include 'header_layout.php';
 ?>
 
     <!-- Custom styles for this template -->
-    <link href="css/menu2.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
     <link href="css/shop-homepage.css" rel="stylesheet">
     <title>Order</title>
 
@@ -33,7 +33,6 @@ if(isset($_SESSION["cart_item"])){
             <th style="text-align:right;" width="5%">Quantity</th>
             <th style="text-align:right;" width="15%">Unit Price</th>
             <th style="text-align:right;" width="15%">Price</th>
-<!--            <th style="text-align:center;" width="5%">Remove</th>-->
             <?php if($_SESSION["checkout"] == 1){?>
                 <th style="text-align:center;" width="5%">Remove</th>
             <?php } ?>
@@ -50,7 +49,6 @@ if(isset($_SESSION["cart_item"])){
                 <td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
                 <td  style="text-align:right;"><?php echo "$ ".$item["price"]; ?></td>
                 <td  style="text-align:right;"><?php echo "$ ". number_format($item_price,2); ?></td>
-<!--                <td style="text-align:center;"><a href="menu.php?action=remove&code=--><?php //echo $item["code"]; ?><!--" ><img class="btnRemoveAction" src="img/delete.png" alt="Remove Item"/></a></td>-->
                 <?php if($_SESSION["checkout"] == 1){?>
                     <td style="text-align:center;"><a href="menu.php?action=remove&code=<?php echo $item["code"]; ?>" ><img name="Remove" class="btnRemoveAction" src="img/delete.png" alt="Remove Item" /></a></td>
                 <?php } ?>
