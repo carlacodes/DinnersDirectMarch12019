@@ -6,7 +6,10 @@
  * Time: 2:22 PM
  */
 
-session_start();
+if(session_status() == PHP_SESSION_NONE){
+    //session has not started
+    session_start();
+}
 
 // Unset all of the session variables.
 $_SESSION = array();

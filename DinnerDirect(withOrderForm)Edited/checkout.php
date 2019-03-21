@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(session_status() == PHP_SESSION_NONE){
+    //session has not started
+    session_start();
+}
 require_once("phpdata/databasephp.php");
 //$db_handle = new DBConnect();
 //$userIDpullorderdatainstance=$_SESSION['userID'];

@@ -17,7 +17,7 @@ include 'header_layout.php';
 
   </head>
 
-  <body>
+  </body>
 
 
   <!-- Page Content -->

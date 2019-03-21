@@ -3,7 +3,10 @@
 //making this a function
 //session_destroy();
 require_once('databasephp.php');
-session_start();
+if(session_status() == PHP_SESSION_NONE){
+    //session has not started
+    session_start();
+}
 
 //ALTER THE TABLE DEFAULT VALUES FOR ALL THE REQUIRED COLUMNS 05/02/2019
 mysqli_query($link,"ALTER TABLE customers
