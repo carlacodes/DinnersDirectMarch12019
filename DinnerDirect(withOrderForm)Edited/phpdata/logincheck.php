@@ -8,13 +8,6 @@ if(session_status() == PHP_SESSION_NONE){
     session_start();
 }
 
-//ALTER THE TABLE DEFAULT VALUES FOR ALL THE REQUIRED COLUMNS 05/02/2019
-mysqli_query($link,"ALTER TABLE customers
-/*ALTER COLUMN store_id SET DEFAULT NULL,
-ALTER COLUMN address_id SET DEFAULT NULL,
-ALTER COLUMN active SET DEFAULT '1',
-ALTER COLUMN create_date SET DEFAULT CURRENT_TIMESTAMP*/
-))");
 
 //$firstName = $_POST['first_name'] ?? '1'; //dataphp 7.0
 //$familyName = $_POST['last_name'] ?? '1';
@@ -59,7 +52,7 @@ if (mysqli_num_rows($result) > 0) {
 
 //    $_SESSION['driverID']=$user['driverID'];
 
-    echo '<script type="text/javascript"> alert("<?php echo $userID; ?>"); location="../index.php"; </script>';
+
     $_SESSION['userID']=$userID;
     //echo $userID; //test to make sure customer id in sql database corresponds
     //header('Location: http://localhost/DinnersDirecHuiEn/startbootstrap-shop-homepage-gh-pages/index.php');
@@ -73,4 +66,4 @@ if (mysqli_num_rows($result) > 0) {
 
 
 
-?>
+
