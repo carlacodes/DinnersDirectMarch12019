@@ -71,9 +71,9 @@ INSERT INTO mealdeal (ID, name, code, price, image, description) VALUES
 (4, 'Set D', 'TH647', 4, 'img/menuimages/pic4.jpg', 'This meal comes with fresh sushi and coke.'),
 (5, 'Set E', 'ET567', 5, 'img/menuimages/pic5.jpg', 'Crispy fried chicken with a cup of coffee.'),
 (6, 'Set F', 'UF576', 6, 'img/menuimages/pic6.jpg', 'Simple meal, bread and eggs.'),
-(7, 'Set G', 'KAH87', 7, 'img/menuimages/pic7.jpg', 'fhjfhj'),
-(8, 'Set H', 'ASD233', 4, 'img/menuimages/pic8.jpg', 'fhjfjghj'),
-(9, 'Set I', 'OIH247', 5, 'img/menuimages/pic9.jpg', 'fghjfgjfgj');
+(7, 'Set G', 'KAH87', 7, 'img/menuimages/pic7.jpg', 'Stuffed peppers with coke'),
+(8, 'Set H', 'ASD233', 4, 'img/menuimages/pic8.jpg', '9 pieces of sushi: salmon, tuna and yellow tail'),
+(9, 'Set I', 'OIH247', 5, 'img/menuimages/pic9.jpg', 'Pizza with vegetable toppings and lots of cheese');
 
 
 CREATE TABLE orderlist (
