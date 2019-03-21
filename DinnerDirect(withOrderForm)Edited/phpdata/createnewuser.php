@@ -23,14 +23,14 @@ $connection = connectToDb();
 $result = mysqli_query($connection, $qryFind);
 if (mysqli_num_rows($result) > 0) {
     //echo "An account already exists.";
-    echo '<script type="text/javascript"> alert("An account already exists under those user details!"); location="../index.html"; </script>';
+    echo '<script type="text/javascript"> alert("An account already exists under those user details!"); location="../index.php"; </script>';
     closeDb($connection);
 } else {
     $result = mysqli_query($connection, $qryAdd);
     // check the query worked
     if ($result) {
         //echo "Success, your account has been registered";
-        echo '<script type="text/javascript"> alert("Success, your account has been registered!"); location="../index.html"; </script>';
+        echo '<script type="text/javascript"> alert("Success, your account has been registered!"); location="../index.php"; </script>';
         closeDb($connection);
     } else {
         echo mysqli_error($connection);

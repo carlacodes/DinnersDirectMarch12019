@@ -10,9 +10,9 @@ body {
 	margin: 40px;
 }
 
-#product-grid {
-	margin: 40px;
-}
+/*#product-grid {*/
+	/*margin: 40px;*/
+/*}*/
 
 #shopping-cart table {
 	width: 100%;
@@ -23,11 +23,11 @@ body {
 	background-color: #FFFFFF;
 }
 
-.txt-heading {
-	color: #211a1a;
-	border-bottom: 1px solid #E0E0E0;
-	overflow: auto;
-}
+/*.txt-heading {*/
+	/*color: #211a1a;*/
+	/*border-bottom: 1px solid #E0E0E0;*/
+	/*overflow: auto;*/
+/*}*/
 
 #btnEmpty {
 	background-color: #ffffff;
@@ -63,9 +63,9 @@ body {
 	margin: 10px 0px;
 }
 
-#product-grid .txt-heading {
-	margin-bottom: 18px;
-}
+/*#product-grid .txt-heading {*/
+	/*margin-bottom: 18px;*/
+/*}*/
 
 .product-item {
 	float: left;
@@ -136,10 +136,10 @@ body {
 	margin: 38px 0px;
 }
 
-.card-img-top
-{
-	height: 200px;
-}
+/*.card-img-top*/
+/*{*/
+	/*height: 200px;*/
+/*}*/
 
 .d-block img-fluid
 {

@@ -44,11 +44,11 @@ if (mysqli_num_rows($result) > 0) {
     $_SESSION['schoolIDdriver']=$user['schoolID'];
     require("pulldriverschedule.php");
     //echo $userID; //test to make sure customer id in sql database corresponds
-    //header('Location: http://localhost/DinnersDirecHuiEn/startbootstrap-shop-homepage-gh-pages/index.html');
+    //header('Location: http://localhost/DinnersDirecHuiEn/startbootstrap-shop-homepage-gh-pages/index.php');
     //exit;
 } else {
 
-    echo '<script type="text/javascript"> alert("Cannot find the selected user. Please try again or create a new account.!"); location="../index.html"; </script>';
+    echo '<script type="text/javascript"> alert("Cannot find the selected user. Please try again or create a new account.!"); location="../index.php"; </script>';
         echo "$emailSql, $passwordSQL";
         closeDb($connection);
 }

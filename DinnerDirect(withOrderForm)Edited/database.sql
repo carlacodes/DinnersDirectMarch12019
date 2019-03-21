@@ -66,12 +66,14 @@ CREATE TABLE mealdeal (
 
 INSERT INTO mealdeal (ID, name, code, price, image, description) VALUES
 (1, 'Set A', 'WE7654', 7, 'img/menuimages/pic1.jpg', 'This set has spaghetti and a coke'),
-(2, 'Set B', 'WE7652', 7, 'img/menuimages/pic8.jpg', 'This is a chicken wrap with a salad side'),
-(3, 'Set C', 'WE7658', 9, 'img/menuimages/pic8.jpg', 'This has 9 pieces of chicken wings coated with garlic soy sauce and comes with fries and a coke'),
-(4, 'Set D', 'TH647', 4, 'img/menuimages/pic6.jpg', 'This meal comes with fresh sushi and coke.'),
-(5, 'Set E', 'ET567', 5, 'img/menuimages/pic9.jpg', 'Crispy fried chicken with a cup of coffee.'),
-(6, 'Set F', 'UF576', 6, 'img/menuimages/pic4.jpg', 'Simple meal, bread and eggs.');
-
+(2, 'Set B', 'WE7652', 7, 'img/menuimages/pic2.jpg', 'This is a chicken wrap with a salad side'),
+(3, 'Set C', 'WE7658', 9, 'img/menuimages/pic3.jpg', 'This has 9 pieces of chicken wings coated with garlic soy sauce and comes with fries and a coke'),
+(4, 'Set D', 'TH647', 4, 'img/menuimages/pic4.jpg', 'This meal comes with fresh sushi and coke.'),
+(5, 'Set E', 'ET567', 5, 'img/menuimages/pic5.jpg', 'Crispy fried chicken with a cup of coffee.'),
+(6, 'Set F', 'UF576', 6, 'img/menuimages/pic6.jpg', 'Simple meal, bread and eggs.'),
+(7, 'Set G', 'KAH87', 7, 'img/menuimages/pic7.jpg', 'fhjfhj'),
+(8, 'Set H', 'ASD233', 4, 'img/menuimages/pic8.jpg', 'fhjfjghj'),
+(9, 'Set I', 'OIH247', 5, 'img/menuimages/pic9.jpg', 'fghjfgjfgj');
 
 
 CREATE TABLE orderlist (
@@ -79,7 +81,8 @@ CREATE TABLE orderlist (
                             customer_id int(10) UNSIGNED NOT NULL,
                             school_id int(10) UNSIGNED NOT NULL,
                             driver_id int(10) UNSIGNED,
-                            time_date text NOT NULL,
+                            date text NOT NULL,
+                            time text NOT NULL,
                             price double(10,2) UNSIGNED,
                             order_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP  ON UPDATE CURRENT_TIMESTAMP,
                             PRIMARY KEY(order_id),

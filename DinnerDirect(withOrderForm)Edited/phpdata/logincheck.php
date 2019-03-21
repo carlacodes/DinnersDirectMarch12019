@@ -37,7 +37,7 @@ if (empty($result)){
 }
 if (mysqli_num_rows($result) > 0) {
 
-    echo '<script type="text/javascript"> alert("You are logged in!"); location="../index.html";</script>';
+    echo '<script type="text/javascript"> alert("You are logged in!"); location="../index.php";</script>';
     $user = mysqli_fetch_assoc($result);
 
     $_SESSION['logged'] = 1;
@@ -56,13 +56,13 @@ if (mysqli_num_rows($result) > 0) {
 
 //    $_SESSION['driverID']=$user['driverID'];
 
-    echo '<script type="text/javascript"> alert("<?php echo $userID; ?>"); location="../index.html"; </script>';
+    echo '<script type="text/javascript"> alert("<?php echo $userID; ?>"); location="../index.php"; </script>';
     $_SESSION['userID']=$userID;
     //echo $userID; //test to make sure customer id in sql database corresponds
-    //header('Location: http://localhost/DinnersDirecHuiEn/startbootstrap-shop-homepage-gh-pages/index.html');
+    //header('Location: http://localhost/DinnersDirecHuiEn/startbootstrap-shop-homepage-gh-pages/index.php');
     //exit;
 } else {
-    echo '<script type="text/javascript"> alert("Cannot find the selected user. Please try again or create a new account.");location="../index.html"; </script>';
+    echo '<script type="text/javascript"> alert("Cannot find the selected user. Please try again or create a new account.");location="../index.php"; </script>';
         //echo "Cannot find the selected user. Please try again or create a new account.";
         //echo "$emailSql, $passwordSQL";
         closeDb($connection);
@@ -70,3 +70,4 @@ if (mysqli_num_rows($result) > 0) {
 
 
 
+?>

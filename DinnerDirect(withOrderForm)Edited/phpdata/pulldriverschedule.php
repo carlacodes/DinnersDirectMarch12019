@@ -1,5 +1,8 @@
 <?php
+session_start();
 
+$MyAccount = 'active';
+include 'header_layout2.php';
 require_once('databasephp.php');
 $connection = connectToDb();
 session_start();
@@ -12,7 +15,7 @@ $driverschoolIDpullorderdatainstance=$_SESSION['schoolIDdriver'];//$y is any dec
 echo $driverschoolIDpullorderdatainstance; //for debugging
 
 
-$query = "SELECT driv.first_name, driv.last_name, sch.schoolname, ordspec.order_id, ordspec.time_date, ordspec.price, ordspec.order_date FROM orderlist ordspec
+$query = "SELECT driv.first_name, driv.last_name, sch.schoolname, ordspec.order_id, ordspec.date, ordspec.time, ordspec.price, ordspec.order_date FROM orderlist ordspec
 JOIN drivers driv /*alias of cus for customer*/
     on ordspec.school_id = driv.schoolID
 JOIN schools sch /*alias of cus for customer*/
@@ -38,19 +41,7 @@ mysqli_close($connection);
 ?>
 
 
-
-<html>
 <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Welcome to Dinners Direct</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../css/shop-homepage.css" rel="stylesheet">
@@ -58,46 +49,6 @@ mysqli_close($connection);
 </head>
 
 <body>
-
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="../index.html">Dinners Direct</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="index.html" collapse="navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="../index.html">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../about.html">About</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="pullorderdata.php">MyAccount</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="../createnewaccount.html">Create Account</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="../menu.php">Order</a>
-                    <!--<a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>!-->
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="logOut.php">Log Out</a>
-                    <!--<a class="nav-link text-uppercase text-expanded" href="products.html">Products</a>!-->
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
 
 
 <!-- Page Content -->
@@ -118,13 +69,15 @@ mysqli_close($connection);
             <th>School name</th>
             <th>Date ordered</th>
             <th>Delivery date</th>
+            <th>Delivery time</th>
             <th>Amount paid</th>
         </tr>
         <?php  while( $user=mysqli_fetch_assoc($result)){ ?>
         <tr>
             <td><?php print_r($user['schoolname']) ?> </td>
             <td><?php echo $user['order_date'] ?></td>
-            <td><?php echo $user['time_date'] ?></td>
+            <td><?php echo $user['date'] ?></td>
+            <td><?php echo $user['time'] ?></td>
             <td><?php echo $user['price'] ?></td>
         </tr>
 

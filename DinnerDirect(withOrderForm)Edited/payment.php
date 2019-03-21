@@ -7,6 +7,7 @@ $conn = $db_handle -> connectDB();
 
 if($_SERVER['REQUEST_METHOD']=$_POST){
     $delivery = $_POST['dt'];
+    $delivery_time = $_POST['time'];
 }
 ?>
 
@@ -26,6 +27,8 @@ echo "<br>";
 
     $item_date = $delivery;
 
+    $item_time = $delivery_time;
+
     $total_price = "";
 
 
@@ -39,13 +42,16 @@ echo "<br>";
 
     }
 
+    echo $delivery_time;
+    echo "<br><br>";
     echo $total_price;
     echo "<br><br>";
-
+    echo $sub_price;
+    echo "<br><br>";
     echo  $driver_id;
     echo "<br><br>nono";
 
-    $query = "INSERT INTO orderlist (customer_id, school_id, time_date, price, driver_id) VALUES ('$customerID', '$schoolID', '$item_date', '$total_price', ' $driver_id')";
+    $query = "INSERT INTO orderlist (customer_id, school_id, date, time, price, driver_id) VALUES ('$customerID', '$schoolID', '$item_date', '$item_time', '$total_price', ' $driver_id')";
 
     echo "<br> query here: " . $query;
     echo "<br>";
