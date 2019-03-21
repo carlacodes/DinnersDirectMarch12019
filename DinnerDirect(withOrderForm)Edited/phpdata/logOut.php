@@ -6,10 +6,7 @@
  * Time: 2:22 PM
  */
 
-if(session_status() == PHP_SESSION_NONE){
-    //session has not started
-    session_start();
-}
+session_start();
 
 // Unset all of the session variables.
 $_SESSION = array();
@@ -34,8 +31,9 @@ session_destroy();
 //unset($vars,$i);
 
 // Close the connection to log out
-//mysqli_close($connection);
+mysqli_close($connection);
 
 //logging out alert to notify user
 echo '<script type="text/javascript"> alert("You are logged out!");  location="../index.php";</script>';
 
+?>

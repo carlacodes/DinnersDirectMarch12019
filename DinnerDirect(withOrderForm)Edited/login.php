@@ -1,11 +1,12 @@
 <?php
-if(session_status() == PHP_SESSION_NONE){
-    //session has not started
-    session_start();
-}
+session_start();
 $login = 'active';
  include 'header_layout.php';
 ?>
+
+<head>
+    <title>Login</title>
+</head>
 
 <body>
 
@@ -34,11 +35,11 @@ $login = 'active';
             </form>
             
                 <br>
-    <p>Do not have an account?</p>
-    <a href="createnewaccount.php" class="btnCreateNewAccount">Create New Account</a>
+    <p>Do not have an account? <br>
+    <a href="createnewaccount.php" class="btnCreateNewAccount">Create New Account</a></p>
     
-    <p>Driver Login?</p>
-    <a href="driverlogin.php" class="btnDriverLogin">Driver Login</a>
+    <p>Driver Login? <br>
+    <a href="driverlogin.php" class="btnDriverLogin">Driver Login</a></p>
 
 ' ?>
 

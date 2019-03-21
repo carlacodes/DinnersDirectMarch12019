@@ -8,6 +8,7 @@
     <script src="js/jquery-ui.js"></script>
 </head>
 <body>
+<br><br><br>
 <form method="post" action=payment.php>
 
 Choose Date: <input type="text" name="dt" id="select_date" class="date readonly" required/>
@@ -40,9 +41,9 @@ Choose Date: <input type="text" name="dt" id="select_date" class="date readonly"
 
     <br><br>
     Choose Time:
-    <input type="radio" name="time" value="0700" checked>Morning: 0700<br>
-    <input type="radio" name="time" value="1200">Afternoon: 1200<br>
-    <input type="radio" name="time" value="1700">Evening: 1700
+    <br><input type="radio" name="time" value="0700" checked>Morning: 0700
+    <br><input type="radio" name="time" value="1200">Afternoon: 1200
+    <br><input type="radio" name="time" value="1700">Evening: 1700
 
 
 
@@ -60,14 +61,7 @@ Choose Date: <input type="text" name="dt" id="select_date" class="date readonly"
 <!--        --><?php //if (isset($gender) && $gender=="other") echo "checked";?>
 <!--           value="other">Other-->
 
-    <button type="submit" href="payment.php" id="myBtn" class="btnCheckout" style=" background-color: #ffffff;
-                                border: #21d000 1px solid;
-                                padding: 5px 10px;
-                                color: #21d000;
-                                float: right;
-                                text-decoration: none;
-                                border-radius: 3px;
-                                margin: 10px 0px;">Make Payment</button>
+    <button type="submit" href="payment.php" name="Pay" id="btnCart">Make Payment</button>
 
 
 </form>

@@ -1,8 +1,5 @@
 <?php
-if(session_status() == PHP_SESSION_NONE){
-    //session has not started
-    session_start();
-}
+session_start();
 
 $MyAccount = 'active';
 include 'header_layout2.php';
@@ -70,6 +67,7 @@ mysqli_close($connection);
         </tr>
         <tr>
             <th>School name</th>
+            <th>Order ID</th>
             <th>Date ordered</th>
             <th>Delivery date</th>
             <th>Delivery time</th>
@@ -78,6 +76,7 @@ mysqli_close($connection);
         <?php  while( $user=mysqli_fetch_assoc($result)){ ?>
         <tr>
             <td><?php print_r($user['schoolname']) ?> </td>
+            <td><?php echo $user['order_id'] ?></td>
             <td><?php echo $user['order_date'] ?></td>
             <td><?php echo $user['date'] ?></td>
             <td><?php echo $user['time'] ?></td>

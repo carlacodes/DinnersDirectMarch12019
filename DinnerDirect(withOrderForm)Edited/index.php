@@ -55,6 +55,12 @@ include 'header_layout.php';
                 </fieldset>
             </form>
 
+<br>
+    <p>Do not have an account? <br>
+    <a href="createnewaccount.php" class="btnCreateNewAccount">Create New Account</a></p>
+    
+    <p>Driver Login? <br>
+    <a href="driverlogin.php" class="btnDriverLogin">Driver Login</a></p>
 ' ?>
 
             <?php } ?>
@@ -76,10 +82,10 @@ include 'header_layout.php';
                         <img class="d-block img-fluid" src="img/frontpage900.jpg" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+                        <img class="d-block img-fluid" src="img/frontpage900.jpg" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                        <img class="d-block img-fluid" src="img/frontpage900.jpg" alt="Third slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -96,13 +102,13 @@ include 'header_layout.php';
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <img class="card-img-top" src="https://i.imgur.com/9TwJKfV.jpg" alt="Croissant">
+                        <img class="card-img-top" src="img/menuimages/pic1.jpg" alt="Set A">
                         <div class="card-body">
                             <h4 class="card-title">
-                                Croissant
+                                Set A
                             </h4>
-                            <h5>£1.30</h5>
-                            <p class="card-text">Breakfast pastry, prefect for a rush morning!</p>
+                            <h5>£7.00</h5>
+                            <p class="card-text">This set has spaghetti and a coke</p>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
@@ -112,83 +118,83 @@ include 'header_layout.php';
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <img class="card-img-top" src="https://i.imgur.com/ncYf27F.jpg" alt="Donuts">
+                        <img class="card-img-top" src="img/menuimages/pic2.jpg" alt="Set B">
                         <div class="card-body">
                             <h4 class="card-title">
-                                Donuts
-                            </h4>
-                            <h5>£2.00</h5>
-                            <p class="card-text">Colourful glazed donuts for sweet cravings.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="https://i.imgur.com/opKASPl.jpg" alt="">
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                Fruit Cake
-                            </h4>
-                            <h5>£3.50</h5>
-                            <p class="card-text">Delicious creamy layered cake topped with a strawberry !</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="https://i.imgur.com/pt2WDxj.jpg" alt="">
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                Stir Fried Flat Rice Noodles
+                                Set B
                             </h4>
                             <h5>£7.00</h5>
-                            <p class="card-text">Stir fried over high heat with soy sauce</p>
+                            <p class="card-text">This is a chicken wrap with a salad side</p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733;</small>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <img class="card-img-top" src="https://i.imgur.com/lDyqZbg.jpg" alt="">
+                        <img class="card-img-top" src="img/menuimages/pic5.jpg" alt="Set E">
                         <div class="card-body">
                             <h4 class="card-title">
-                                Gamberi Spaghetti
+                                Set E
                             </h4>
-                            <h5>£9.50</h5>
-                            <p class="card-text">Pasta with tomato sauce with gently cooked prawns</p>
+                            <h5>£5.00</h5>
+                            <p class="card-text">Crispy fried chicken with a cup of coffee.</p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            <small class="text-muted">&#9733; &#9733; &#9733;</small>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="https://i.imgur.com/400kbjs.jpg?1" alt="">
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                Kimchi Fried Rice
-                            </h4>
-                            <h5>£8.50</h5>
-                            <p class="card-text">Stir fried well-fermented kimchi with chilled rice topped with a sunny side up!</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
-                    </div>
-                </div>
+<!--                <div class="col-lg-4 col-md-6 mb-4">-->
+<!--                    <div class="card h-100">-->
+<!--                        <img class="card-img-top" src="https://i.imgur.com/pt2WDxj.jpg" alt="">-->
+<!--                        <div class="card-body">-->
+<!--                            <h4 class="card-title">-->
+<!--                                Stir Fried Flat Rice Noodles-->
+<!--                            </h4>-->
+<!--                            <h5>£7.00</h5>-->
+<!--                            <p class="card-text">Stir fried over high heat with soy sauce</p>-->
+<!--                        </div>-->
+<!--                        <div class="card-footer">-->
+<!--                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="col-lg-4 col-md-6 mb-4">-->
+<!--                    <div class="card h-100">-->
+<!--                        <img class="card-img-top" src="https://i.imgur.com/lDyqZbg.jpg" alt="">-->
+<!--                        <div class="card-body">-->
+<!--                            <h4 class="card-title">-->
+<!--                                Gamberi Spaghetti-->
+<!--                            </h4>-->
+<!--                            <h5>£9.50</h5>-->
+<!--                            <p class="card-text">Pasta with tomato sauce with gently cooked prawns</p>-->
+<!--                        </div>-->
+<!--                        <div class="card-footer">-->
+<!--                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="col-lg-4 col-md-6 mb-4">-->
+<!--                    <div class="card h-100">-->
+<!--                        <img class="card-img-top" src="https://i.imgur.com/400kbjs.jpg?1" alt="">-->
+<!--                        <div class="card-body">-->
+<!--                            <h4 class="card-title">-->
+<!--                                Kimchi Fried Rice-->
+<!--                            </h4>-->
+<!--                            <h5>£8.50</h5>-->
+<!--                            <p class="card-text">Stir fried well-fermented kimchi with chilled rice topped with a sunny side up!</p>-->
+<!--                        </div>-->
+<!--                        <div class="card-footer">-->
+<!--                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
             </div>
             <!-- /.row -->

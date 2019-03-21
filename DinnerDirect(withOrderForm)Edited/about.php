@@ -45,7 +45,7 @@ include 'header_layout.php';
                 (44) 1234567890
                 <br>
                 <abbr title="Email">E:</abbr>
-                <a href="mailto:#">name@example.com</a>
+                <a href="mailto:#">customer-support@ddirect.com</a>
             </address>
         </div>
     </div>

@@ -1,8 +1,6 @@
 <?php
-if(session_status() == PHP_SESSION_NONE){
-    //session has not started
-    session_start();
-}
+session_start();
+
 require_once("dbConnect.php");
 $db_handle = new DBConnect();
 if(!empty($_GET["action"])) {

@@ -1,8 +1,5 @@
 <?php
-if(session_status() == PHP_SESSION_NONE){
-    //session has not started
-    session_start();
-}
+session_start();
 
 
 
@@ -55,7 +52,7 @@ if(isset($_SESSION["cart_item"])){
                 <td  style="text-align:right;"><?php echo "$ ". number_format($item_price,2); ?></td>
 <!--                <td style="text-align:center;"><a href="menu.php?action=remove&code=--><?php //echo $item["code"]; ?><!--" ><img class="btnRemoveAction" src="img/delete.png" alt="Remove Item"/></a></td>-->
                 <?php if($_SESSION["checkout"] == 1){?>
-                    <td style="text-align:center;"><a href="menu.php?action=remove&code=<?php echo $item["code"]; ?>" ><img class="btnRemoveAction" src="img/delete.png" alt="Remove Item" /></a></td>
+                    <td style="text-align:center;"><a href="menu.php?action=remove&code=<?php echo $item["code"]; ?>" ><img name="Remove" class="btnRemoveAction" src="img/delete.png" alt="Remove Item" /></a></td>
                 <?php } ?>
             </tr>
             <?php
@@ -80,30 +77,30 @@ if(isset($_SESSION["cart_item"])){
 
 if($_SESSION["checkout"] == 1 && $_SESSION["additem"] == 0 && !empty($_SESSION["cart_item"])) {
     ?>
-    <a href="checkout.php" id="btnCart">Checkout</a>
-    <a id="btnCart" href="menu.php?action=empty">Empty Cart</a>
+    <a href="checkout.php" id="btnCart" name="Checkout">Checkout</a>
+    <a id="btnCart" href="menu.php?action=empty" name="Empty">Empty Cart</a>
 
     <?php
 }
 
 elseif($_SESSION["checkout"] == 1 && $_SESSION["additem"] == 1 && !empty($_SESSION["cart_item"])) {
     ?>
-    <a href="checkout.php" id="btnCart">Checkout</a>
-    <a id="btnCart" href="shopping_cart.php?action=empty">Empty Cart</a>
+    <a href="checkout.php" id="btnCart" name="Checkout">Checkout</a>
+    <a id="btnCart" href="shopping_cart.php?action=empty" name="Empty">Empty Cart</a>
 
     <?php
 }
 
 if($_SESSION["checkout"] == 0) {
 ?>
-<a href="menu.php" id="btnCart">Edit Cart</a>
+<a href="menu.php" id="btnCart" name="Edit">Edit Cart</a>
 
 <?php
             }
 
 if($_SESSION["additem"] == 1 && empty($_SESSION["cart_item"])) {
     ?>
-    <a href="menu.php" id="btnCart">Add Item</a>
+    <a href="menu.php" id="btnCart" name="Add">Add Item</a>
 
     <?php
 }

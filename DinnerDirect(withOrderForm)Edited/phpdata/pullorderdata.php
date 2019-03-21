@@ -5,21 +5,13 @@ $MyAccount = 'active';
 include 'header_layout2.php';
 require_once('databasephp.php');
 $connection = connectToDb();
-//session_start();
-
-if(session_status() == PHP_SESSION_NONE){
-    //session has not started
-    session_start();
-}
+session_start();
 
 //$srch_term = $_GET['srch-term'] ?? '1'; //PHP 7.0
 //$srch= $_GET['srch-term'] ?? '1'; //dataphp 7.0
 //echo "$srch";
 
 $userIDpullorderdatainstance=$_SESSION['userID'];//$y is any declared variable
-if (empty($userIDpullorderdatainstance)){
-    echo '<script type="text/javascript"> alert("Please Login First.");location="../index.html"; </script>';
-}
 //echo $userIDpullorderdatainstance;
 
 
@@ -100,14 +92,15 @@ mysqli_close($connection);
 
                 </tr>
 
-            <?php } ?>
+            <? } ?>
 
     </table>
     <?php
     }
-    else {?> <h2 class="my-4">Please Login</h2>
+    else {?>
+        <h2 class="my-4">Please Login</h2>
     <a id="btnLogin" href="../login.php">Login Here!</a>
-    <?php }?>
+    <?}?>
     <div class="row">
 
     </div>
