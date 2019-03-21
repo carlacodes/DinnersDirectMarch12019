@@ -34,9 +34,8 @@ session_destroy();
 //unset($vars,$i);
 
 // Close the connection to log out
-mysqli_close($connection);
+//mysqli_close($connection);
 
 //logging out alert to notify user
 echo '<script type="text/javascript"> alert("You are logged out!");  location="../index.php";</script>';
 
-?>
