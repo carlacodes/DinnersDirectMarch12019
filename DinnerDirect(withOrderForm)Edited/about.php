@@ -1,6 +1,8 @@
 <?php
-session_start();
-
+if(session_status() == PHP_SESSION_NONE){
+    //session has not started
+    session_start();
+}
 $about = "active";
 include 'header_layout.php';
 
@@ -17,7 +19,7 @@ include 'header_layout.php';
 
 </head>
 
-<body>
+</body>
 <!-- Page Content -->
 
 

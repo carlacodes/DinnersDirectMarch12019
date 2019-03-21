@@ -1,6 +1,8 @@
 <?php
-session_start();
-
+if(session_status() == PHP_SESSION_NONE){
+    //session has not started
+    session_start();
+}
 
 
 $Order = "active";
@@ -16,7 +18,7 @@ include 'cart_action.php';
 
 
 </head>
-<body>
+</body>
 
 
 <div class="container">

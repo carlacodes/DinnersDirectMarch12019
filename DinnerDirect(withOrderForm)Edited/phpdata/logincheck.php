@@ -3,15 +3,11 @@
 //making this a function
 //session_destroy();
 require_once('databasephp.php');
-session_start();
+if(session_status() == PHP_SESSION_NONE){
+    //session has not started
+    session_start();
+}
 
-//ALTER THE TABLE DEFAULT VALUES FOR ALL THE REQUIRED COLUMNS 05/02/2019
-mysqli_query($link,"ALTER TABLE customers
-/*ALTER COLUMN store_id SET DEFAULT NULL,
-ALTER COLUMN address_id SET DEFAULT NULL,
-ALTER COLUMN active SET DEFAULT '1',
-ALTER COLUMN create_date SET DEFAULT CURRENT_TIMESTAMP*/
-))");
 
 //$firstName = $_POST['first_name'] ?? '1'; //dataphp 7.0
 //$familyName = $_POST['last_name'] ?? '1';

@@ -1,11 +1,13 @@
 <?php
-session_start();
+if(session_status() == PHP_SESSION_NONE){
+    //session has not started
+    session_start();
+}
 
 $MyAccount = 'active';
 include 'header_layout2.php';
 require_once('databasephp.php');
 $connection = connectToDb();
-session_start();
 
 //$srch_term = $_GET['srch-term'] ?? '1'; //PHP 7.0
 //$srch= $_GET['srch-term'] ?? '1'; //dataphp 7.0
@@ -96,7 +98,7 @@ mysqli_close($connection);
 
                 </tr>
 
-            <? } ?>
+            <?php } ?>
 
     </table>
     <?php
