@@ -44,7 +44,7 @@ if(isset($_SESSION["cart_item"])){
 
 
     $query = "INSERT INTO orderlist (customer_id, school_id, date, time, price, driver_id) VALUES ('$customerID', '$schoolID', '$item_date', '$item_time', '$total_price', ' $driver_id')";
-
+    mysqli_query($conn, $query);
     $order_id = mysqli_insert_id($conn);
 
 
