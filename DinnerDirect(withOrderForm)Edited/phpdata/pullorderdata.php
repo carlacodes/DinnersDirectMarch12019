@@ -104,7 +104,7 @@ mysqli_close($connection);
     else {?>
         <h2 class="my-4">Please Login</h2>
     <a id="btnLogin" href="../login.php">Login Here!</a>
-    <?}?>
+    <?php }?>
     <div class="row">
 
     </div>
