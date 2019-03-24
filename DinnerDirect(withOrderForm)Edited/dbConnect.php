@@ -1,4 +1,6 @@
 <?php
+//reference codes from https://phppot.com/php/simple-php-shopping-cart/
+
 class DBConnect {
     private $host = "localhost";
     private $user = "dinnersuser";

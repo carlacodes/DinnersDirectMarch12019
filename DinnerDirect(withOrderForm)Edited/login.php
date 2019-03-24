@@ -11,8 +11,7 @@ $login = 'active';
     <title>Login</title>
 </head>
 
-</body>
-
+<body>
 
 <!-- Page Content -->
 <div class="container">
@@ -50,6 +49,8 @@ $login = 'active';
 
 </div>
 <!-- /.container -->
+
+</body>
 
 <?php include 'footer_layout.php' ?>
 

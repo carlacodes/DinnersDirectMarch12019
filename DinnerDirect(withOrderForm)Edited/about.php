@@ -19,8 +19,8 @@ include 'header_layout.php';
 
 </head>
 
-</body>
-<!-- Page Content -->
+
+<body>
 
 
 <!-- Additional Information on Webpage -->
@@ -53,6 +53,7 @@ include 'header_layout.php';
     </div>
 </div>
 
+</body>
 
 <?php
 include 'footer_layout.php';

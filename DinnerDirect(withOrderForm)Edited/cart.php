@@ -7,19 +7,19 @@ if(session_status() == PHP_SESSION_NONE){
 
 
 include 'header_layout.php';
-//include 'cart_action.php';
+include 'cart_action.php';
 
 ?>
-
+<head>
     <!-- Custom styles for this template -->
     <link href="css/menu.css" rel="stylesheet">
     <link href="css/shop-homepage.css" rel="stylesheet">
     <title>Order</title>
+</head>
 
 
-    </head>
-    <body>
-
+<body>
+<!-- reference codes from https://phppot.com/php/simple-php-shopping-cart/-->
 <h2 class="my-4">Shopping Cart</h2>
 <hr>
 
@@ -107,7 +107,5 @@ if($_SESSION["additem"] == 1 && empty($_SESSION["cart_item"])) {
 ?>
 
 
-
-
-    </body>
+</body>
 </html>

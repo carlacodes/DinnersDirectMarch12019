@@ -1,3 +1,5 @@
+<!--reference codes from https://www.thapatechnical.com/-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +16,7 @@
 Choose Date: <input type="text" name="dt" id="select_date" class="date readonly" required/>
 
 <script type="text/javascript">
-
+// reference codes from https://stackoverflow.com/questions/12777751/html-required-readonly-input-in-form
     $(".readonly").keydown(function(e){
         e.preventDefault();
     });

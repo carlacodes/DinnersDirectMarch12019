@@ -18,7 +18,7 @@ include 'header_layout.php';
 </head>
 
 
-
+<body>
 
 <!-- Page Content -->
 
@@ -163,6 +163,8 @@ include 'header_layout.php';
 
 </div>
 <!-- /.container -->
+
+</body>
 
 <?php
 include 'footer_layout.php';

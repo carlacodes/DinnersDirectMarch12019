@@ -12,14 +12,7 @@ include 'header_layout2.php';
 require_once('databasephp.php');
 $connection = connectToDb();
 
-//$srch_term = $_GET['srch-term'] ?? '1'; //PHP 7.0
-//$srch= $_GET['srch-term'] ?? '1'; //dataphp 7.0
-//echo "$srch";
-
 $userIDpullorderdatainstance=$_SESSION['userID'];//$y is any declared variable
-
-//echo $userIDpullorderdatainstance;
-
 
 $query = "SELECT cus.first_name, cus.last_name, ordspec.order_date, ordspec.price, orderitem.quantity, orderitem.item_id, ordspec.order_id, mealdeal.name, mealdeal.ID, ordspec.date, ordspec.time FROM orderlist ordspec 
 JOIN customers cus on ordspec.customer_id = cus.customerID
@@ -46,10 +39,10 @@ mysqli_close($connection);
 ?>
 
 <head>
+
     <script type="text/javascript" src='tablesearch.js'> </script>
     <style>
         #myInput {
-            background-image: url('/css/searchicon.png'); /* Add a search icon to input */
             background-position: 10px 12px; /* Position the search icon */
             background-repeat: no-repeat; /* Do not repeat the icon image */
             width: 100%; /* Full-width */
@@ -161,7 +154,7 @@ mysqli_close($connection);
     <?php
     // Free the results from memory
     //unset all variables
-//at the start of every page runs that code
+    //at the start of every page runs that code
     mysqli_free_result($result);
     mysqli_free_result($result2);
 
@@ -174,10 +167,10 @@ mysqli_close($connection);
 
 <!-- /.container -->
 
-
 <!-- Bootstrap core JavaScript -->
 <script src="../vendor/jquery/jquery.min.js"></script>
 <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 </html>

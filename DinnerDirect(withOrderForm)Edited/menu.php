@@ -11,9 +11,10 @@ include 'cart_action.php';
 
 ?>
 
+<head>
 <!-- Custom styles for this template -->
-<link href="css/menu.css" rel="stylesheet">
 <link href="css/shop-homepage.css" rel="stylesheet">
+<link href="css/menu.css" rel="stylesheet">
 
 <!-- Icon style -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -22,7 +23,8 @@ include 'cart_action.php';
 
 
 </head>
-</body>
+
+<body>
 
 
 <div class="container">
@@ -42,6 +44,7 @@ include 'cart_action.php';
             <br><br>
 
             <!-- Search bar -->
+            <!-- reference codes from https://www.youtube.com/watch?v=PBLuP2JZcEg -->
             <form class="mt-4" action="menu.php" method="post">
                 <div class="input-group input-group-lg">
                     <input type="text" class="form-control" placeholder="Search" name="search">
@@ -56,8 +59,7 @@ include 'cart_action.php';
             $conn = $db_handle -> connectDB();
 
             if(isset($_POST['search'])){
-                $search = $_POST['search'];
-//        $search = preg_replace("#[0-9a-z]#1","",$search);
+                $search = $_POST['search']; 
 
                 $search_query = "SELECT * FROM mealdeal WHERE description LIKE '%$search%' or name LIKE '%$search%'";
 
@@ -76,21 +78,19 @@ include 'cart_action.php';
                     <?php
 
                 }
-                else{
-                    while($row = mysqli_fetch_array($result)){
+                else{?>
+                    <h2 class="my-4">Search Results</h2>
+                        <hr>
+                        <div class="row">
+
+                    <?php while($row = mysqli_fetch_array($result)){
                         $meal_name = $row['name'];
                         $meal_descp = $row['description'];
                         $meal_ID = $row['ID'];
                         $meal_image = $row['image'];
                         $meal_code = $row['code'];
                         $meal_price = $row['price']; ?>
-
-                        <!-- Menu -->
-
-                        <h2 class="my-4">Search Results</h2>
-                        <hr>
-                        <div class="row">
-
+                        <!-- reference codes from https://phppot.com/php/simple-php-shopping-cart/ -->
                             <div class="col-lg-4 col-md-6 mb-4" >
                                 <form method="post" action="menu.php?action=add&code=<?php echo $meal_code; ?>">
 
@@ -121,12 +121,13 @@ include 'cart_action.php';
                                 </form>
                             </div>
 
-                        </div>
-
 
                     <?php }
                     mysqli_free_result($result);
                     mysqli_close($conn);
+                    ?>
+                        </div>
+            <?php
                 }
             }
 
@@ -150,6 +151,7 @@ include 'cart_action.php';
                                 <div class="card">
                                     <div class="card-transition">
                                         <img class="card-img-top" style="height: 200px;" src="<?php echo $product_array[$key]["image"]; ?>" alt="<?php echo $product_array[$key]["image"]; ?>">
+                                        <!-- reference codes from https://www.w3schools.com/howto/howto_css_image_overlay.asp -->
                                         <div class="overlay">
                                             <div class="text"><?php echo $product_array[$key]["description"]; ?></div>
                                         </div>
@@ -196,6 +198,7 @@ include 'cart_action.php';
     <!-- row -->
 </div>
 <!-- /.container -->
+</body>
 
 <?php
 include 'footer_layout.php';

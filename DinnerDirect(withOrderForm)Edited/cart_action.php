@@ -6,6 +6,9 @@ if(session_status() == PHP_SESSION_NONE){
 
 require_once("dbConnect.php");
 $db_handle = new DBConnect();
+
+//reference codes from https://phppot.com/php/simple-php-shopping-cart/
+
 if(!empty($_GET["action"])) {
     switch($_GET["action"]) {
         case "add":

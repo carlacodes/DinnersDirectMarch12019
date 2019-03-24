@@ -4,8 +4,7 @@ $CreateAccount = "active";
 include 'header_layout.php';
 
 ?>
-
-  <head>
+<head>
 
     <title>Create New Account</title>
 
@@ -14,10 +13,10 @@ include 'header_layout.php';
 
     <!-- Custom styles for this template -->
     <link href="css/shop-homepage.css" rel="stylesheet">
+</head>
 
-  </head>
 
-  </body>
+<body>
 
 
   <!-- Page Content -->
@@ -51,11 +50,10 @@ include 'header_layout.php';
             </div>
 
     </div>
+</body>
 
   <?php
-
   include 'footer_layout.php';
-
   ?>
 
 </html>

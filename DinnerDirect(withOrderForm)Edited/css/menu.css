@@ -105,24 +105,3 @@ input[data-readonly] {
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
-
-/*html {*/
-	/*height: 100%;*/
-	/*box-sizing: border-box;*/
-/*}*/
-
-/**,*/
-/**:before,*/
-/**:after {*/
-	/*box-sizing: inherit;*/
-/*}*/
-
-/*.footer {*/
-	/*position: absolute;*/
-	/*right: 0;*/
-	/*bottom: 0;*/
-	/*left: 0;*/
-	/*padding: 1rem;*/
-	/*background-color: #efefef;*/
-	/*text-align: center;*/
-/*}*/

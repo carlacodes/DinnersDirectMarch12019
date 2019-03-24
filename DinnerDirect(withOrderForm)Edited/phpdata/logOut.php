@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: carla
- * Date: 3/1/2019
- * Time: 2:22 PM
- */
 
 if(session_status() == PHP_SESSION_NONE){
     //session has not started
@@ -26,12 +20,6 @@ if (ini_get("session.use_cookies")) {
 
 // Finally, destroy the session.
 session_destroy();
-
-//$vars = array_keys(get_defined_vars());
-//for ($i = 0; $i < sizeOf($vars); $i++) {
- //   unset($$vars[$i]);
-//}
-//unset($vars,$i);
 
 
 //logging out alert to notify user

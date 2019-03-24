@@ -9,15 +9,16 @@ include 'header_layout.php';
 include 'cart_action.php';
 
 ?>
-
+<head>
 <!-- Custom styles for this template -->
 <link href="css/menu.css" rel="stylesheet">
 <link href="css/shop-homepage.css" rel="stylesheet">
 <title>Shopping Cart</title>
 
-
 </head>
-</body>
+
+
+<body>
 
 
 <div class="container">
@@ -54,6 +55,8 @@ include 'cart_action.php';
     <!-- row -->
 </div>
 <!-- /.container -->
+
+</body>
 
 <?php
 include 'footer_layout.php';

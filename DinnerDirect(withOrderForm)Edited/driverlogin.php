@@ -10,9 +10,9 @@ include 'header_layout.php';
     <!-- Custom styles for this template -->
     <link href="css/shop-homepage.css" rel="stylesheet">
 
-  </head>
+</head>
 
-  </body>
+<body>
 
 
 
@@ -43,6 +43,7 @@ include 'header_layout.php';
     </div>
     <!-- /.container -->
 
+</body>
 
   <?php
   include 'footer_layout.php';
