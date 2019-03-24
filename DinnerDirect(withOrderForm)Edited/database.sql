@@ -29,7 +29,8 @@ CREATE TABLE customers (
 
 INSERT INTO customers (customerID, first_name, last_name, schoolID, email, password) VALUES
 (1, 'louis', 'nguyen', 1, 'banter@ucl.ac.uk', 'UCLove'),
-(3, 'Carla', 'Griffiths', 2, 'carla.griffiths@gmail.com', 'carlloves');
+(2, 'Carla', 'Griffiths', 2, 'carla.griffiths@gmail.com', 'carlloves'),
+(3, 'John', 'Smith', 4, 'john@ucl.ac.uk', 'hello');
 
 
 
@@ -47,7 +48,7 @@ CREATE TABLE drivers (
 
 INSERT INTO drivers (driverID, first_name, last_name, phonenumber, email, password,schoolID) VALUES
 (1, 'carl', 'griffiths', '12', 'carla.griffiths@gmail.com', 'test2019', 1),
-   (2, 'Hui En', 'Saw', '+447874165162', 'huien@gmail.com', 'HuiEntest', 2),
+   (2, 'Hui En', 'Saw', '34827953', 'huien@gmail.com', 'HuiEntest', 2),
    (3, 'Marco', 'Wong', '890395330', 'Marcowong@gmail.com', 'MarcoWongtest', 3),
    (4, 'Bob', 'Smith', '1234567', 'BobSmith@gmail.com', 'BobSmithtest', 4);
 
