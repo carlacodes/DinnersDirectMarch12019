@@ -34,11 +34,11 @@ if(isset($_SESSION["cart_item"])){
 
 
     foreach ($_SESSION["cart_item"] as $item => $value ){
-        $item_price = $_SESSION["cart_item"][$item]['price'];
-        $item_quantity = $_SESSION["cart_item"][$item]['quantity'];
+        $item_price = (double)$_SESSION["cart_item"][$item]['price'];
+        $item_quantity = (double)$_SESSION["cart_item"][$item]['quantity'];
 
-        $sub_price = $item_price * $item_quantity;
-        $total_price += $sub_price;
+        $sub_price = (double)$item_price * (double)$item_quantity;
+        $total_price += (double)$sub_price;
 
     }
 
