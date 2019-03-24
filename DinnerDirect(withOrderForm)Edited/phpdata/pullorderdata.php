@@ -46,7 +46,41 @@ mysqli_close($connection);
 ?>
 
 <head>
+    <script type="text/javascript" src='tablesearch.js'> </script>
+    <style>
+        #myInput {
+            background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+            background-position: 10px 12px; /* Position the search icon */
+            background-repeat: no-repeat; /* Do not repeat the icon image */
+            width: 100%; /* Full-width */
+            font-size: 16px; /* Increase font-size */
+            padding: 12px 20px 12px 40px; /* Add some padding */
+            border: 1px solid #ddd; /* Add a grey border */
+            margin-bottom: 12px; /* Add some space below the input */
+        }
 
+        #myUL {
+            /* Remove default list styling */
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #myUL li a {
+            border: 1px solid #ddd; /* Add a border to all links */
+            margin-top: -1px; /* Prevent double borders */
+            background-color: #f6f6f6; /* Grey background color */
+            padding: 12px; /* Add some padding */
+            text-decoration: none; /* Remove default text underline */
+            font-size: 18px; /* Increase the font-size */
+            color: black; /* Add a black text color */
+            display: block; /* Make it into a block element to fill the whole list */
+        }
+
+        #myUL li a:hover:not(.header) {
+            background-color: #eee; /* Add a hover effect to all links, except for headers */
+        }
+    </style>
     <!-- Custom styles for this template -->
     <link href="../css/shop-homepage.css" rel="stylesheet">
     <link href="../css/menu.css" rel="stylesheet">
@@ -66,7 +100,15 @@ mysqli_close($connection);
     { ?>
         <h2 class="my-4">Past Orders</h2>
 
-    <table class="table" >
+    <input type="text" id="myInput" onkeyup="tablesearchorderitemid()" placeholder="Search for Order ID..">
+        <input type="text" id="myInput2" onkeyup="tablesearchorderitem()" placeholder="Search for Set Type..">
+        <input type="text" id="myInput3" onkeyup="tablesearchorderquantity()" placeholder="Search for Quantity..">
+        <input type="text" id="myInput4" onkeyup="tablesearchordertotalprice()" placeholder="Search for Total Price..">
+        <input type="text" id="myInput5" onkeyup="tablesearchdateordered()" placeholder="Search for Date Ordered..">
+        <input type="text" id="myInput6" onkeyup="tablesearchdeliverydate()" placeholder="Search for Delivery Date..">
+        <input type="text" id="myInput7" onkeyup="tablesearchdeliverytime()" placeholder="Search for Delivery Time..">
+
+        <table class="table" id="myTable" >
 
             <tr>
                 <th>Name</th>
@@ -105,6 +147,8 @@ mysqli_close($connection);
             <?php } ?>
 
     </table>
+
+
     <?php
     }
     else {?>
