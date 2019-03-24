@@ -66,8 +66,14 @@ include 'cart_action.php';
 
                 $count = mysqli_num_rows($result);
                 if($count == 0){
-                    $output = 'No result';
-                    echo $output;
+                    ?>
+
+                    <h2 class="my-4">Search Results</h2>
+                    <hr>
+                        <p>No Results</p>
+
+
+                    <?php
 
                 }
                 else{
@@ -77,9 +83,7 @@ include 'cart_action.php';
                         $meal_ID = $row['ID'];
                         $meal_image = $row['image'];
                         $meal_code = $row['code'];
-                        $meal_price = $row['price'];
-
-                        $output .= '<div>'.$meal_name.' '.$meal_descp.'</div>';?>
+                        $meal_price = $row['price']; ?>
 
                         <!-- Menu -->
 

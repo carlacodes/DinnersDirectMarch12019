@@ -1,8 +1,8 @@
 <?php
 class DBConnect {
     private $host = "localhost";
-    private $user = "root";
-    private $password = "";
+    private $user = "dinnersuser";
+    private $password = "dinnersdirectE";
     private $database = "dinnersdirect";
     private $connection;
 

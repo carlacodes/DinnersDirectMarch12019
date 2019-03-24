@@ -104,4 +104,7 @@ CREATE TABLE orderitem (
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-
+DROP USER IF EXISTS 'dinnersuser'@'localhost';
+CREATE USER 'dinnersuser'@'localhost' IDENTIFIED BY 'dinnersdirectE';
+GRANT USAGE ON *.* TO 'dinnersuser'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+GRANT ALL PRIVILEGES ON `dinnersdirect`.* TO 'dinnersuser'@'localhost';
